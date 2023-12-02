@@ -115,9 +115,6 @@
     description = "yuwki0131";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      google-chrome
-    #  thunderbird
     ];
   };
 
@@ -131,6 +128,15 @@
     vim
     wget
     git
+    terminator
+    guake
+    vscode
+    firefox
+    google-chrome
+    thunderbird
+    nyxt
+    slack
+    chatgpt-cli
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
