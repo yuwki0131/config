@@ -42,15 +42,20 @@
     LC_TIME = "ja_JP.UTF-8";
   };
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = [pkgs.fcitx5-mozc];
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # hyprland
   programs.hyprland.enable=true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -59,10 +64,8 @@
     xkbOptions = "ctrl:swapcaps"; 
   };
 
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = [pkgs.fcitx5-mozc];
-  };
+  # Configure console keymap
+  console.keyMap = "jp106";
 
   fonts = {
     fonts = with pkgs; [
@@ -82,9 +85,6 @@
     };
   };
 
-
-  # Configure console keymap
-  console.keyMap = "jp106";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -115,8 +115,33 @@
     description = "yuwki0131";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      # browser
+      firefox
+      google-chrome
+      nyxt
+
+      # tools
+      git
+
+      # terminals
+      terminator
+      guake
+
+      # editor
+      vscode
+      vim
+      emacs
+
+      ## trials ..................
+      # utils
+      htop
+      docker
     ];
   };
+
+  # Enable automatic login for the user.
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "yuwki0131";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -124,19 +149,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    emacs
-    vim
-    wget
-    git
-    terminator
-    guake
-    vscode
-    firefox
-    google-chrome
-    thunderbird
-    nyxt
-    slack
-    chatgpt-cli
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -165,4 +179,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
+
 }
