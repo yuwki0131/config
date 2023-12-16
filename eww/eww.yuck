@@ -1,0 +1,94 @@
+(defwidget bar []
+  (centerbox :orientation "h"
+    (systeminfo)
+    (workspaces)
+    (controlpanel)
+    ))
+
+(defwidget systeminfo []
+  (box :class "systeminfo" :orientation "h" :space-evenly false :halign "end"
+    (box :class "timespace"
+      time)
+    (box :class "timespace" :space-evenly false
+      "wifi: "
+      wifistat)
+    (metric :label "vol."
+            :value volume
+            :onchange "amixer -D pulse sset Master {}%")
+    (metric :label "cpu"
+            :value {EWW_CPU.avg}
+            :onchange "")
+    (metric :label "mem"
+            :value {EWW_RAM.used_mem_perc}
+            :onchange "")
+    (metric :label "disk"
+            :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+            :onchange "")
+    ))
+
+(defwidget controlpanel []
+  (box :class "controlpanel" :orientation "h" :space-evenly true :halign "start"
+    (open-emacs)
+    (open-terminal)
+    (open-browser)
+    ))
+
+(defwidget open-emacs []
+  (box :class "cpbutton"
+    (button :onclick "emacs &" "emacs")))
+
+(defwidget open-terminal []
+  (box :class "cpbutton"
+    (button :onclick "konsole &" "terminal")))
+
+(defwidget open-browser []
+  (box :class "cpbutton"
+    (button :onclick "google-chrome-stable &" "browser")))
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+    (button :onclick "wmctrl -s 0" 1)
+    (button :onclick "wmctrl -s 1" 2)
+    (button :onclick "wmctrl -s 2" 3)
+    (button :onclick "wmctrl -s 3" 4)
+    (button :onclick "wmctrl -s 4" 5)
+    (button :onclick "wmctrl -s 5" 6)
+    (button :onclick "wmctrl -s 6" 7)
+    (button :onclick "wmctrl -s 7" 8)
+    (button :onclick "wmctrl -s 8" 9)))
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)))
+
+(defpoll volume :interval "1s"
+  "scripts/getvol")
+
+(defpoll time :interval "1s"
+  "date") ; '+%Y/%b/%d time: %H:%M:%S'
+
+(defpoll wifistat :interval "10s"
+  "nmcli -f IN-USE,SSID,BARS,SIGNAL dev wifi | grep '*' | awk '{$1=$1};1'")
+
+(defwindow bar
+  :monitor 0
+  :exclusive true
+  :geometry (geometry :x "0%"
+                      :y "15px"
+                      :width "99%"
+                      :height "40px"
+                      :anchor "bottom center")
+  :windowtype "dock"
+  :stacking "fg"
+  (bar))

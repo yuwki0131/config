@@ -1,0 +1,74 @@
+* {
+  all: unset;
+}
+
+.bar {
+  background-color: #ffffff;
+  color: #80848c;
+  border-radius: 20px;
+}
+
+.cpbutton {
+  margin: 10px;
+}
+
+.timespace {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.nospace {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.controlpanelbutton {
+  margin-left: 100px;
+}
+
+.systeminfo slider {
+  all: unset;
+  color: #ffd5cd;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.label-ram {
+  font-size: large;
+}
+
+.workspaces button:hover {
+  color: #D35D6E;
+}
