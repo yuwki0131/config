@@ -85,6 +85,8 @@
     };
   };
 
+  # bluetooth
+  services.blueman.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -135,11 +137,14 @@
       # nextcloud # todo: try
 
       # terminal tools
+      neofetch
       tldr
       exa
       bat
       autojump
       fzf
+      peco
+      ast-grep
 
       # graphc tools
       inkscape
@@ -152,6 +157,7 @@
       gitkraken
       dbeaver
       jq
+      postman
 
       # langs
       rustc
@@ -181,6 +187,11 @@
       ## trials ..................
 
     ];
+  };
+
+  # docker
+  virtualisation = {
+    docker.enable = true;
   };
 
   # Enable automatic login for the user.
