@@ -12,9 +12,9 @@
     (box :class "timespace" :space-evenly false
       "wifi: "
       wifistat)
-    (metric :label "vol."
-            :value volume
-            :onchange "amixer -D pulse sset Master {}%")
+    (metric :label "battery"
+            :value {EWW_BATTERY.BAT0.capacity}
+            :onchange ""))
     (metric :label "cpu"
             :value {EWW_CPU.avg}
             :onchange "")
@@ -70,10 +70,10 @@
            :max 101
            :active {onchange != ""}
            :value value
-           :onchange onchange)))
-
-(defpoll volume :interval "1s"
-  "scripts/getvol")
+           :onchange onchange)
+    (box :class "textspec" :space-evenly false
+      {round(value, 0)} "%")
+      ))
 
 (defpoll time :interval "1s"
   "date") ; '+%Y/%b/%d time: %H:%M:%S'
