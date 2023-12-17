@@ -121,9 +121,44 @@
       nyxt
 
       # tools
-      git
       fast-cli
       googler
+      slack
+      wireshark
+      wine
+      joplin
+      zathura
+
+      # file tools
+      meld
+      syncthing # todo: try
+      # nextcloud # todo: try
+
+      # terminal tools
+      tldr
+      exa
+      bat
+      autojump
+      fzf
+
+      # graphc tools
+      inkscape
+      gimp
+      pinta
+      tilix
+
+      # dev tools
+      git
+      gitkraken
+      dbeaver
+      jq
+
+      # langs
+      rustc
+      cargo
+      nodejs
+      go
+      asdf
 
       # terminals
       terminator
