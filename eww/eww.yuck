@@ -14,7 +14,7 @@
       wifistat)
     (metric :label "battery"
             :value {EWW_BATTERY.BAT0.capacity}
-            :onchange ""))
+            :onchange "")
     (metric :label "cpu"
             :value {EWW_CPU.avg}
             :onchange "")
