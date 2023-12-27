@@ -132,25 +132,31 @@
       zathura
 
       # file tools
-      meld
+      meld # diff
       syncthing # todo: try
       # nextcloud # todo: try
 
       # terminal tools
-      neofetch
-      tldr
-      exa
+      neofetch # system info
+      tldr # too long
+      exa # alter ls
       bat
       autojump
       fzf
       peco
       ast-grep
+      tree
+      ranger
+
+      # system tools
+      lshw
 
       # graphc tools
       inkscape
       gimp
       pinta
       tilix
+      feh
 
       # dev tools
       git
@@ -158,6 +164,7 @@
       dbeaver
       jq
       postman
+      wget
 
       # langs
       rustc
@@ -165,6 +172,9 @@
       nodejs
       go
       asdf
+      python3
+      openjdk
+      gradle
 
       # terminals
       terminator
