@@ -28,22 +28,15 @@
 
 (defwidget controlpanel []
   (box :class "controlpanel" :orientation "h" :space-evenly true :halign "start"
-    (open-emacs)
-    (open-terminal)
-    (open-browser)
+    (open-app :command "code &"                 :display-name "vscode")
+    (open-app :command "emacs &"                :display-name "emacs")
+    (open-app :command "konsole &"              :display-name "terminal")
+    (open-app :command "google-chrome-stable &" :display-name "browser")
     ))
 
-(defwidget open-emacs []
+(defwidget open-app [command display-name]
   (box :class "cpbutton"
-    (button :onclick "emacs &" "emacs")))
-
-(defwidget open-terminal []
-  (box :class "cpbutton"
-    (button :onclick "konsole &" "terminal")))
-
-(defwidget open-browser []
-  (box :class "cpbutton"
-    (button :onclick "google-chrome-stable &" "browser")))
+    (button :onclick command display-name)))
 
 (defwidget workspaces []
   (box :class "workspaces"
