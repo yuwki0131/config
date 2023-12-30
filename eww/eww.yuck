@@ -32,6 +32,7 @@
     (open-app :command "emacs &"                :display-name "emacs")
     (open-app :command "konsole &"              :display-name "terminal")
     (open-app :command "google-chrome-stable &" :display-name "browser")
+    (open-app :command "nyxt &"                 :display-name "nyxt")
     ))
 
 (defwidget open-app [command display-name]
