@@ -79,3 +79,11 @@
 .workspaces button:hover {
   color: #D35D6E;
 }
+
+.workspace-button-inactive {
+}
+
+.workspace-button-active {
+  color: #D35D6E;
+  font-weight: bold;
+}
