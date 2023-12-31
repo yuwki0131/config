@@ -131,6 +131,7 @@
       joplin
       zathura
       fuzzel
+      lm_sensors
 
       # file tools
       meld # diff
