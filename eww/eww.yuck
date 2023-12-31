@@ -1,9 +1,12 @@
 (defwidget bar []
-  (centerbox :orientation "h"
+  (box :orientation "h" :halign "center"
     (systeminfo)
-    (workspaces)
     (controlpanel)
+    (workspaces)
     ))
+
+(defwidget bar-space []
+  (box :class "bar-spacing" current-workspace))
 
 (defwidget systeminfo []
   (box :class "systeminfo" :orientation "h" :space-evenly false :halign "end"
@@ -27,7 +30,7 @@
     ))
 
 (defwidget controlpanel []
-  (box :class "controlpanel" :orientation "h" :space-evenly true :halign "start"
+  (box :class "controlpanel" :orientation "h" :space-evenly true :halign "center"
     (open-app :command "code &"                 :display-name "vscode")
     (open-app :command "emacs &"                :display-name "emacs")
     (open-app :command "konsole &"              :display-name "terminal")
@@ -36,7 +39,7 @@
     ))
 
 (defwidget open-app [command display-name]
-  (box :class "cpbutton"
+  (box :class "control-panel-button"
     (button :onclick command display-name)))
 
 (defwidget workspaces []
