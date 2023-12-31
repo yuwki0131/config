@@ -130,6 +130,7 @@
       wine
       joplin
       zathura
+      fuzzel
 
       # file tools
       meld # diff

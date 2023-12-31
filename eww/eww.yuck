@@ -31,6 +31,7 @@
 
 (defwidget controlpanel []
   (box :class "controlpanel" :orientation "h" :space-evenly true :halign "center"
+    (open-app :command "fuzzel &"               :display-name "fuzzel")
     (open-app :command "code &"                 :display-name "vscode")
     (open-app :command "emacs &"                :display-name "emacs")
     (open-app :command "konsole &"              :display-name "terminal")
