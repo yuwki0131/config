@@ -5,9 +5,6 @@
     (workspaces)
     ))
 
-(defwidget bar-space []
-  (box :class "bar-spacing" current-workspace))
-
 (defwidget systeminfo []
   (box :class "systeminfo" :orientation "h" :space-evenly false :halign "end"
     (box :class "timespace"
