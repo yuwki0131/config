@@ -163,16 +163,20 @@
       # dev tools
       git
       gitkraken
-      dbeaver
       jq
       postman
       wget
+
+      # db
+      dbeaver
+      mysql
 
       # langs
       rustc
       cargo
       nodejs
       go
+      go-migrate
       asdf
       python3
       openjdk
@@ -191,6 +195,7 @@
       # utils
       htop
       docker
+      docker-compose
 
       # hypr
       hyprpaper
