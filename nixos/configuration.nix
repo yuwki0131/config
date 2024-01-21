@@ -55,7 +55,11 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  ## use default plasma
+  # services.xserver.desktopManager.plasma5.enable = true;
+  # use default Hyprland
+  # services.xserver.displayManager.defaultSession = "hyprland";
+
 
   # Configure keymap in X11
   services.xserver = {
@@ -186,6 +190,7 @@
       terminator
       guake
       hyper
+      st
 
       # editor
       vscode
@@ -212,11 +217,13 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "yuwki0131";
+  services.xserver.displayManager.autoLogin.enable = false;
+  # services.xserver.displayManager.autoLogin.user = "yuwki0131";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.overlays = [ (import /home/yuwki0131/myconfig/config/nixos/overlays/fix-st.nix) ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
