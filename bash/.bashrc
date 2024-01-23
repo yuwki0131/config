@@ -2,3 +2,4 @@
 
 alias rc='sudo nixos-rebuild switch'
 alias sl='ls'
+alias xcp='xclip -selection clipboard'
