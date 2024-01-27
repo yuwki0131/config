@@ -153,6 +153,7 @@
       ast-grep
       tree
       ranger
+      sl
 
       # system tools
       lshw
