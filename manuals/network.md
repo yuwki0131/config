@@ -1,3 +1,5 @@
 # network command
 
+```
 $ nmtui
+```
