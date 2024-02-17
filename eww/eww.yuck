@@ -9,9 +9,6 @@
   (box :class "systeminfo" :orientation "h" :space-evenly false :halign "end"
     (box :class "timespace"
       time)
-    (box :class "timespace" :space-evenly false
-      "wifi: "
-      wifistat)
     (metric :label "battery"
             :value {EWW_BATTERY.BAT0.capacity}
             :onchange "")
