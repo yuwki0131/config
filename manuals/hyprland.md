@@ -23,3 +23,11 @@
   * Super + Shift + C : google-chrome-stable起動
   * Super + Shift + V : vscode起動
 
+## よく使うコマンド
+
+### モニターリスト(xrandr相当)
+
+```
+$ hypr monitors
+```
+
