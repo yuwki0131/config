@@ -1,9 +1,12 @@
 # nyxt キーバインド覚書
 
 
+C-t: 新しいタブを開く
+
+
 |キー|description|備考|
 |:--|:--|:--|
-|f3|search-buffer|
+|f3|search-buffer||
 |C-+|zoom-page||
 |C-.|jump-to-heading||
 |C-/|undo||
