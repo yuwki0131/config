@@ -90,14 +90,18 @@
   };
 
   # bluetooth
-  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.systemWide = true;
+
+  # services.blueman.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = false;
@@ -136,6 +140,9 @@
       zathura
       fuzzel
       lm_sensors
+      libwebp
+      gcolor3
+      alsaUtils
 
       # file tools
       meld # diff
@@ -171,6 +178,7 @@
       jq
       postman
       wget
+      go-swag
 
       # terminal tools
       xclip
@@ -206,6 +214,9 @@
       docker
       docker-compose
 
+      # keyring
+      gnome.gnome-keyring
+
       # hypr
       hyprpaper
       eww-wayland
@@ -214,6 +225,9 @@
 
     ];
   };
+
+  services.gnome.gnome-keyring.enable = true;
+
 
   # docker
   virtualisation = {
