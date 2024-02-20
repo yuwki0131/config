@@ -161,6 +161,7 @@
       tree
       ranger
       sl
+      silver-searcher
 
       # system tools
       lshw
@@ -179,6 +180,7 @@
       postman
       wget
       go-swag
+      cloc
 
       # terminal tools
       xclip
