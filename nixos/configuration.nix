@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -132,7 +131,7 @@
 
       # tools
       fast-cli
-      googler
+      # googler
       slack
       wireshark
       wine
@@ -144,15 +143,14 @@
       gcolor3
       alsaUtils
 
-      # file tools
-      meld # diff
-      syncthing # todo: try
+      ## file tools
+      # meld # diff
+      # syncthing # todo: try
       # nextcloud # todo: try
 
       # terminal tools
       neofetch # system info
-      tldr # too long
-      exa # alter ls
+      # tldr # too long
       bat
       autojump
       fzf
@@ -172,14 +170,16 @@
       pinta
       tilix
       feh
+      capture
 
       # dev tools
       git
       gitkraken
       jq
-      postman
       wget
-      go-swag
+      # go-swag
+      # go-swagger
+      air
       cloc
 
       # terminal tools
@@ -223,6 +223,10 @@
       hyprpaper
       eww-wayland
 
+      # node
+      nodePackages.node2nix
+      openapi-generator-cli
+
       ## trials ..................
 
     ];
@@ -243,7 +247,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [ (import /home/yuwki0131/myconfig/config/nixos/overlays/fix-st.nix) ];
+  nixpkgs.overlays = [ 
+    (import /home/yuwki0131/myconfig/config/nixos/overlays/fix-st.nix)
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
