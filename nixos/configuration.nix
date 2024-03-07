@@ -71,7 +71,7 @@
   console.keyMap = "jp106";
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji
@@ -91,7 +91,7 @@
   # bluetooth
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.systemWide = true;
+  # hardware.pulseaudio.systemWide = true;
 
   # services.blueman.enable = true;
 
@@ -142,6 +142,8 @@
       libwebp
       gcolor3
       alsaUtils
+      speedtest-cli
+      nload
 
       ## file tools
       # meld # diff
@@ -163,6 +165,7 @@
 
       # system tools
       lshw
+      wlr-randr
 
       # graphc tools
       inkscape
@@ -202,9 +205,9 @@
 
       # terminals
       terminator
-      guake
-      hyper
       st
+      kitty
+      alacritty
 
       # editor
       vscode
@@ -225,6 +228,7 @@
 
       # node
       nodePackages.node2nix
+      nodePackages.orval
       openapi-generator-cli
 
       ## trials ..................
