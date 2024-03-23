@@ -1,0 +1,7 @@
+# wayland
+
+## commands
+
+```
+$ wlr-randr
+```
