@@ -54,11 +54,11 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
+
   ## use default plasma
   # services.xserver.desktopManager.plasma5.enable = true;
   # use default Hyprland
   # services.xserver.displayManager.defaultSession = "hyprland";
-
 
   # Configure keymap in X11
   services.xserver = {
@@ -90,17 +90,16 @@
 
   # bluetooth
   hardware.bluetooth.enable = true;
+  # services.blueman.enable = true;
+
+  # audio
+  sound.enable = true;
   hardware.pulseaudio.enable = true;
   # hardware.pulseaudio.systemWide = true;
-
-  # services.blueman.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  # hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = false;
@@ -128,6 +127,7 @@
       firefox
       google-chrome
       nyxt
+      surf
 
       # tools
       fast-cli
@@ -180,8 +180,6 @@
       gitkraken
       jq
       wget
-      # go-swag
-      # go-swagger
       air
       cloc
 
