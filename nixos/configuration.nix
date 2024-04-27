@@ -54,11 +54,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-
-  ## use default plasma
-  # services.xserver.desktopManager.plasma5.enable = true;
-  # use default Hyprland
-  # services.xserver.displayManager.defaultSession = "hyprland";
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -90,16 +86,15 @@
 
   # bluetooth
   hardware.bluetooth.enable = true;
-  # services.blueman.enable = true;
 
   # audio
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  # hardware.pulseaudio.systemWide = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable sound with pipewire.
   security.rtkit.enable = true;
   services.pipewire = {
     enable = false;
@@ -127,7 +122,10 @@
       firefox
       google-chrome
       nyxt
-      surf
+
+      # add currently
+      unzip
+      imagemagick
 
       # tools
       fast-cli
@@ -146,7 +144,7 @@
       nload
 
       ## file tools
-      # meld # diff
+      meld
       # syncthing # todo: try
       # nextcloud # todo: try
 
@@ -166,6 +164,10 @@
       # system tools
       lshw
       wlr-randr
+      libinput
+      libinput-gestures
+      ydotool
+      # powertop
 
       # graphc tools
       inkscape
@@ -174,6 +176,11 @@
       tilix
       feh
       capture
+
+      # capture
+      slurp
+      grim
+      # wl-copy
 
       # dev tools
       git
@@ -223,31 +230,19 @@
       # hypr
       hyprpaper
       eww-wayland
-
-      # node
-      nodePackages.node2nix
-      nodePackages.orval
-      openapi-generator-cli
-
-      ## trials ..................
-
     ];
   };
 
-  services.gnome.gnome-keyring.enable = true;
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
+  # gnome keyring
+  services.gnome.gnome-keyring.enable = true;
 
   # docker
   virtualisation = {
     docker.enable = true;
   };
-
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = false;
-  # services.xserver.displayManager.autoLogin.user = "yuwki0131";
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = [ 
     (import /home/yuwki0131/myconfig/config/nixos/overlays/fix-st.nix)
@@ -259,7 +254,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -285,6 +280,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
