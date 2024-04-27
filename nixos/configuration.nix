@@ -58,9 +58,9 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "jp";
-    xkbVariant = "";
-    xkbOptions = "ctrl:swapcaps"; 
+    xkb.layout = "jp";
+    xkb.variant = "";
+    xkb.options = "ctrl:swapcaps"; 
   };
 
   # Configure console keymap
