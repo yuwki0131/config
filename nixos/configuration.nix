@@ -131,7 +131,6 @@
       fast-cli
       # googler
       slack
-      wireshark
       wine
       joplin
       zathura
@@ -142,6 +141,10 @@
       alsaUtils
       speedtest-cli
       nload
+
+      # network tools
+      wireshark
+      nmap
 
       ## file tools
       meld
