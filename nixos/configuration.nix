@@ -132,7 +132,7 @@
       # googler
       slack
       wine
-      joplin
+      # joplin (purged 2024/07/10)
       zathura
       fuzzel
       lm_sensors
@@ -152,7 +152,7 @@
       # nextcloud # todo: try
 
       # terminal tools
-      neofetch # system info
+      # neofetch # system info (purged 2024/07/10)
       # tldr # too long
       bat
       autojump
@@ -170,7 +170,7 @@
       libinput
       libinput-gestures
       ydotool
-      # powertop
+      powertop
 
       # graphc tools
       inkscape
@@ -197,7 +197,7 @@
       xclip
 
       # db
-      dbeaver
+      dbeaver-bin
       mysql
       redis
 
@@ -230,7 +230,7 @@
       docker-compose
 
       # keyring
-      gnome.gnome-keyring
+      gnome-keyring
 
       # hypr
       hyprpaper
