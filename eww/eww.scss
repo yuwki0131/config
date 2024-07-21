@@ -1,32 +1,32 @@
 * {
   all: unset;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .bar {
   background-color: #ffffff;
   color: #80848c;
-  border-radius: 20px;
 }
 
 .control-panel-button {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .timespace {
+  font-weight: bold;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 20px;
+}
+
+.wifispace {
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 .textspec {
   margin-left: 3px;
   margin-right: 10px;
-}
-
-.systeminfo slider {
-  all: unset;
-  color: #ffd5cd;
 }
 
 .metric scale trough highlight {
@@ -45,16 +45,4 @@
   margin-top: 4px;
   margin-left: 10px;
   margin-right: 0px;
-  }
-
-.workspaces button:hover {
-  color: #0997B6;
-}
-
-.workspace-button-inactive {
-}
-
-.workspace-button-active {
-  color: #E5266A;
-  font-weight: bold;
 }

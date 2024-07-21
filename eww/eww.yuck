@@ -1,8 +1,6 @@
 (defwidget bar []
   (box :orientation "h" :halign "center"
     (systeminfo)
-    (controlpanel)
-    (workspaces)
     ))
 
 (defwidget systeminfo []
@@ -21,43 +19,9 @@
     (metric :label "disk"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
             :onchange "")
+    (box :class "wifispace" 
+    	 wifistat)
     ))
-
-(defwidget controlpanel []
-  (box :class "controlpanel" :orientation "h" :space-evenly true :halign "center"
-    (open-app :command "fuzzel &"               :display-name "fuzzel")
-    (open-app :command "code &"                 :display-name "vscode")
-    (open-app :command "emacs &"                :display-name "emacs")
-    (open-app :command "konsole &"              :display-name "terminal")
-    (open-app :command "google-chrome-stable &" :display-name "browser")
-    (open-app :command "nyxt &"                 :display-name "nyxt")
-    ))
-
-(defwidget open-app [command display-name]
-  (box :class "control-panel-button"
-    (button :onclick command display-name)))
-
-(defwidget workspace-button [index]
-  (button :onclick "hyprctl dispatch workspace ${index}"
-    :class {current-workspace == index ?
-            "workspace-button-active" : "workspace-button-inactive"}
-            index))
-
-(defwidget workspaces []
-  (box :class "workspaces"
-       :orientation "h"
-       :space-evenly true
-       :halign "start"
-       :spacing 20
-    (workspace-button :index "1")
-    (workspace-button :index "2")
-    (workspace-button :index "3")
-    (workspace-button :index "4")
-    (workspace-button :index "5")
-    (workspace-button :index "6")
-    (workspace-button :index "7")
-    (workspace-button :index "8")
-    (workspace-button :index "9")))
 
 (defwidget metric [label value onchange]
   (box :orientation "h"
@@ -74,10 +38,7 @@
       ))
 
 (defpoll time :interval "1s"
-  "date") ; '+%Y/%b/%d time: %H:%M:%S'
-
-(defpoll current-workspace :interval "1s"
-  "hyprctl activeworkspace | grep workspace | awk '{print $3}'")
+	 "date") ; '+%Y/%b/%d time: %H:%M:%S'
 
 (defpoll wifistat :interval "10s"
   "nmcli -f IN-USE,SSID,BARS,SIGNAL dev wifi | grep '*' | awk '{$1=$1};1'")
@@ -85,10 +46,8 @@
 (defwindow bar
   :monitor 0
   :exclusive true
-  :geometry (geometry :x "0%"
-                      :y "5px"
-                      :width "99%"
-                      :height "40px"
+  :geometry (geometry :height "40px"
+  	    	      :width "100%"
                       :anchor "bottom center")
   :windowtype "dock"
   :stacking "fg"
