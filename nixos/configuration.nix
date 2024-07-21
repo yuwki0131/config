@@ -232,9 +232,6 @@
       docker
       docker-compose
 
-      # keyring
-      gnome-keyring
-
       # hypr
       hyprpaper
       eww
