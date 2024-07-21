@@ -100,9 +100,9 @@
   # Enable sound with pipewire.
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = false;
-    alsa.enable = false;
-    alsa.support32Bit = false;
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
