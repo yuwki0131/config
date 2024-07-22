@@ -140,10 +140,6 @@
     docker.enable = true;
   };
 
-  nixpkgs.overlays = [ 
-    (import /home/yuwki0131/myconfig/config/nixos/overlays/fix-st.nix)
-  ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
