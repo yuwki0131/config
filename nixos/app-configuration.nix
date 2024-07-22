@@ -4,40 +4,64 @@
 
 {
   environment.systemPackages = with pkgs; [    
-    # browser
-    firefox
+
+    #########################################
+    ## GUI Tools
+    #########################################
+
+    ## browsers
     google-chrome
+    chromium
+    firefox
     nyxt
+    luakit
 
-    # add currently
-    unzip
-    imagemagick
+    ## terminals
+    terminator
+    kitty
+    alacritty
 
-    # tools
-    fast-cli
-    slack
-    wine
-    # joplin (purged 2024/07/10)
-    zathura
-    fuzzel
-    lm_sensors
-    libwebp
+    ## text editors
+    vscode
+    vim
+    emacs
+
+    ## graphc tools
+    inkscape
+    gimp
+    pinta
+    tilix
+    feh
+    capture
     gcolor3
-    alsaUtils
-    speedtest-cli
-    nload
-
-    # network tools
-    wireshark
-    nmap
 
     ## file tools
     meld
-    # syncthing # todo: try
-    # nextcloud # todo: try
 
-    # terminal tools
-    neofetch # system info (purged 2024/07/10)
+    ## network tools
+    speedtest-cli
+    fast-cli
+    wireshark
+    nmap
+    nload
+
+    ## sns
+    slack
+
+    ## Windows emulator
+    wine
+
+    ## document viewer
+    zathura
+
+    ## invoke apps
+    fuzzel
+
+    #########################################
+    ## Terminal Utilities
+    #########################################
+
+    ## terminal tools
     tldr
     bat
     autojump
@@ -48,74 +72,84 @@
     ranger
     sl
     silver-searcher
+    xclip
 
-    # system tools
+    ## monitoring
+    htop
+    powertop
+    lm_sensors
+
+    ## system info
+    neofetch
     lshw
     wlr-randr
-    libinput
-    libinput-gestures
-    ydotool
-    powertop
 
-    # graphc tools
-    inkscape
-    gimp
-    pinta
-    tilix
-    feh
-    capture
+    #########################################
+    ## System & System Utilities
+    #########################################
 
-    # capture
+    ## hyprland
+    hyprpaper
+    eww
+
+    ## for screen capture
     slurp
     grim
     wl-clipboard
 
-    # dev tools
-    git
-    gitkraken
-    jq
-    wget
-    air
-    cloc
+    ## file
+    unzip
+    imagemagick
+    libwebp
 
-    # terminal tools
-    xclip
+    ## for trackpad
+    libinput
+    libinput-gestures
 
-    # db
-    dbeaver-bin
-    mysql
-    redis
+    ## audio
+    alsaUtils
 
-    # langs
+    #########################################
+    ## For Dev
+    #########################################
+
+    ## langs
     rustc
     cargo
+    asdf
     nodejs
     go
     go-migrate
-    asdf
     python3
     python311Packages.pip
     openjdk
     gradle
 
-    # terminals
-    terminator
-    st
-    kitty
-    alacritty
+    ## db
+    dbeaver-bin
+    mysql
+    redis
 
-    # text editor
-    vscode
-    vim
-    emacs
-
-    # utils
-    htop
+    ## docker
     docker
     docker-compose
 
-    # hypr
-    hyprpaper
-    eww
+    ## git
+    git
+    gitkraken
+
+    ## dev tools
+    jq
+    wget
+    air  # for golang
+    cloc
+
+    #########################################
+    ## Others
+    #########################################
+
+    ## file tools
+    # syncthing # todo: try
+    # nextcloud # todo: try
   ];
 }
