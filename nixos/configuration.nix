@@ -128,6 +128,7 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "yuwki0131";
+  services.displayManager.defaultSession = "hyprland";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
