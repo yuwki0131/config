@@ -132,7 +132,6 @@
 
       # tools
       fast-cli
-      # googler
       slack
       wine
       # joplin (purged 2024/07/10)
@@ -155,8 +154,8 @@
       # nextcloud # todo: try
 
       # terminal tools
-      # neofetch # system info (purged 2024/07/10)
-      # tldr # too long
+      neofetch # system info (purged 2024/07/10)
+      tldr
       bat
       autojump
       fzf
@@ -186,7 +185,7 @@
       # capture
       slurp
       grim
-      # wl-copy
+      wl-clipboard
 
       # dev tools
       git
@@ -222,7 +221,7 @@
       kitty
       alacritty
 
-      # editor
+      # text editor
       vscode
       vim
       emacs
