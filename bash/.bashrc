@@ -8,6 +8,12 @@ alias cf='cd ~/myconfig/config/'
 
 # shortcuts
 
+## screen shots
+alias sshotf='sh ~/myconfig/config/tools/screen-captures/capture.sh full'
+alias sshotr='sh ~/myconfig/config/tools/screen-captures/capture.sh region'
+alias sshotfc='sh ~/myconfig/config/tools/screen-captures/capture.sh full clipboard'
+alias sshotrc='sh ~/myconfig/config/tools/screen-captures/capture.sh region clipboard'
+
 ## git
 alias gd='git diff'
 alias ga='git add'
