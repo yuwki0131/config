@@ -1,12 +1,16 @@
 (defwidget bar-widget []
-  (box :orientation "h" :halign "center"
-    (systeminfo)
+  (box :orientation "h"
+       (environment-info)
+       (system-info)))
+
+(defwidget environment-info []
+  (box :orientation "h" :space-evenly false :halign "start"
+    (box :class "timespace" time)
+    (box :class "infospace" wetstat)
     ))
 
-(defwidget systeminfo []
-  (box :class "systeminfo" :orientation "h" :space-evenly false :halign "end"
-    (box :class "timespace"
-      time)
+(defwidget system-info []
+  (box :orientation "h" :space-evenly false :halign "end"
     (metric :label "battery"
             :value {EWW_BATTERY.BAT0.capacity}
             :onchange "")
@@ -19,12 +23,8 @@
     (metric :label "disk"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
             :onchange "")
-    (box :class "infospace"
-    	 batstat)
-    (box :class "infospace"
-         wifistat)
-    (box :class "infospace"
-         wetstat)
+    (box :class "infospace" batstat)
+    (box :class "infospace" wifistat)
     ))
 
 (defwidget metric [label value onchange]
@@ -56,9 +56,7 @@
 (defwindow bar
   :monitor 0
   :exclusive true
-  :geometry (geometry :height "40px"
-  	    	      :width "100%"
-                      :anchor "bottom center")
+  :geometry (geometry :height "40px" :width "100%" :anchor "bottom center")
   :windowtype "dock"
   :stacking "fg"
   (bar-widget))
