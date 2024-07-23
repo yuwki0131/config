@@ -78,6 +78,7 @@
     htop
     powertop
     lm_sensors
+    acpi
 
     ## system info
     neofetch
@@ -140,6 +141,8 @@
 
     ## dev tools
     jq
+    jo
+    gron
     wget
     air  # for golang
     cloc

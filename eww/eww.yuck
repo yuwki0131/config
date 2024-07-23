@@ -1,4 +1,4 @@
-(defwidget bar []
+(defwidget bar-widget []
   (box :orientation "h" :halign "center"
     (systeminfo)
     ))
@@ -19,8 +19,12 @@
     (metric :label "disk"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
             :onchange "")
-    (box :class "wifispace" 
-    	 wifistat)
+    (box :class "infospace"
+    	 batstat)
+    (box :class "infospace"
+         wifistat)
+    (box :class "infospace"
+         wetstat)
     ))
 
 (defwidget metric [label value onchange]
@@ -43,6 +47,12 @@
 (defpoll wifistat :interval "10s"
   "nmcli -f IN-USE,SSID,BARS,SIGNAL dev wifi | grep '*' | awk '{$1=$1};1'")
 
+(defpoll batstat :interval "2s"
+   "acpi -i | head -n 1 | cut -c 1-40")
+
+(defpoll wetstat :interval "300s"
+   "curl -s 'wttr.in/Tokyo?format=3'")
+
 (defwindow bar
   :monitor 0
   :exclusive true
@@ -51,4 +61,4 @@
                       :anchor "bottom center")
   :windowtype "dock"
   :stacking "fg"
-  (bar))
+  (bar-widget))
