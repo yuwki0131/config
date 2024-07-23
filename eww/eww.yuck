@@ -50,8 +50,8 @@
 (defpoll batstat :interval "2s"
    "acpi -i | head -n 1 | cut -c 1-40")
 
-(defpoll wetstat :interval "300s"
-   "curl -s 'wttr.in/Tokyo?format=3'")
+(defpoll wetstat :interval "600s"
+   "curl -s 'wttr.in/Tokyo?format=%c+%t+%w+%h'")
 
 (defwindow bar
   :monitor 0
