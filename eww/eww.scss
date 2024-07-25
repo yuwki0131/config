@@ -35,17 +35,19 @@
   margin-right: 10px;
 }
 
-.metric scale trough highlight {
-  all: unset;
+.red-metric trough highlight {
   background-color: #D35D6E;
-  color: #000000;
-  border-radius: 50px;
+  border-radius: 5px;
+}
+
+.blue-metric trough highlight {
+  background-color: #0997B6;
+  border-radius: 5px;
 }
 
 .metric scale trough {
-  all: unset;
   background-color: #4e4e4e;
-  border-radius: 50px;
+  border-radius: 5px;
   min-height: 10px;
   min-width: 100px;
   margin-top: 4px;
