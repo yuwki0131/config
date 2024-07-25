@@ -3,10 +3,6 @@
   font-size: 18px;
 }
 
-.bar {
-  margin: 5px 5px 5px 5px;
-}
-
 .bar-widget {
   background-color: rgba(16, 16, 16, 0.3);
   color: #eeeeee;
@@ -21,18 +17,22 @@
 
 .timespace {
   font-weight: bold;
-  margin-left: 10px;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .infospace {
-  margin-left: 10px;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .textspec {
   margin-left: 3px;
   margin-right: 10px;
+}
+
+.focus-name {
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
 }
 
 .red-metric trough highlight {

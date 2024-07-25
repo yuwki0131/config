@@ -1,13 +1,19 @@
 (defwidget bar-widget []
   (box :orientation "h" :class "bar-widget"
-       (environment-info)
+       (left-info)
        (system-info)))
 
-(defwidget environment-info []
+(defwidget left-info []
   (box :orientation "h" :space-evenly false :halign "start"
     (box :class "timespace" time)
     (box :class "infospace" wetstat)
+    (control-info)
     ))
+
+(defwidget control-info []
+  (box :class "focus-name" :halign "start" :space-evenly false
+    "focus on "
+    focusapp))
 
 (defwidget system-info []
   (box :orientation "h" :space-evenly false :halign "end"
@@ -58,10 +64,13 @@
 (defpoll wetstat :interval "600s"
    "curl -s 'wttr.in/Tokyo?format=%c+%t+%w+%h'")
 
+(defpoll focusapp :interval "1s"
+   "hyprctl activewindow | grep class | awk '{print $2}'")
+
 (defwindow bar
   :monitor 0
   :exclusive true
-  :geometry (geometry :height "50px" :anchor "bottom center")
+  :geometry (geometry :height "50px" :width "100%" :anchor "bottom center")
   :windowtype "dock"
   :stacking "fg"
   (bar-widget))
