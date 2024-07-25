@@ -79,6 +79,8 @@
     powertop
     lm_sensors
     acpi
+    gnome.gnome-system-monitor
+    glances
 
     ## system info
     neofetch
