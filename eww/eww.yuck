@@ -35,6 +35,7 @@
 	    :classname "red-metric")
     (box :class "infospace" batstat)
     (box :class "infospace" wifistat)
+    (box :class "infospace" (box "🔉") volume)
     ))
 
 (defwidget metric [label value onchange classname]
@@ -66,6 +67,9 @@
 
 (defpoll focusapp :interval "1s"
    "hyprctl activewindow | grep class | awk '{print $2}'")
+
+(defpoll volume :interval "1s"
+   "amixer get Master | grep -o '[0-9]*%' | head -1")
 
 (defwindow bar
   :monitor 0
