@@ -20,35 +20,29 @@
   (box :orientation "h" :space-evenly false :halign "end"
     (metric :label "battery"
             :value {EWW_BATTERY.BAT0.capacity}
-            :onchange ""
 	    :classname "blue-metric")
     (metric :label "cpu"
             :value {EWW_CPU.avg}
-            :onchange ""
 	    :classname "red-metric")
     (metric :label "mem"
             :value {EWW_RAM.used_mem_perc}
-            :onchange ""
 	    :classname "red-metric")
     (metric :label "disk"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
-            :onchange ""
 	    :classname "red-metric")
     (box :class "infospace" batstat)
     (box :class "infospace" wifistat)
     (box :class "infospace" (box "🔉") volume)
     ))
 
-(defwidget metric [label value onchange classname]
+(defwidget metric [label value classname]
   (box :orientation "h"
        :class "metric"
        :space-evenly false
     (box :class "label" label)
     (scale :min 0
            :max 101
-           :active {onchange != ""}
            :value value
-           :onchange onchange
 	   :class classname)
     (box :class "textspec" :space-evenly false
       {round(value, 0)} "%")
