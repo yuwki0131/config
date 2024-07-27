@@ -4,6 +4,7 @@ alias rc='sudo nixos-rebuild switch'
 alias sl='ls'
 alias xcp='xclip -selection clipboard'
 alias la='exa -lha --git'
+alias ec='emacsclient'
 
 # jumper
 alias cf='cd ~/myconfig/config/'
