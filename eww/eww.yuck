@@ -1,7 +1,8 @@
 (defwidget bar-widget []
-  (box :orientation "h" :class "bar-widget"
-       (left-info)
-       (system-info)))
+  (box :orientation "h" :space-evenly false :class "bar-widget"
+       (left-info :halign "start")
+       (box :class "spacer" :hexpand true)
+       (system-info :halign "end")))
 
 (defwidget left-info []
   (box :orientation "h" :space-evenly false :halign "start"
@@ -11,7 +12,7 @@
     ))
 
 (defwidget control-info []
-  (box :class "focus-name" :halign "start" :space-evenly false
+  (box :class "focus-name" :space-evenly false :halign "start"
     "focus on "
     focusapp))
 
@@ -53,17 +54,16 @@
       {round(value, 0)} "%")
       ))
 
-(defpoll time :interval "1s"
-	 "date") ; '+%Y/%b/%d time: %H:%M:%S'
+(defpoll time :interval "1s" "date") ; '+%Y/%b/%d time: %H:%M:%S'
 
 (defpoll wifistat :interval "10s"
-  "nmcli -f IN-USE,SSID,BARS,SIGNAL dev wifi | grep '*' | awk '{$1=$1};1'")
+  "nmcli -f IN-USE,SSID,BARS,SIGNAL dev wifi | grep '*' | awk '{$1=$1};1' | tr -d '\n'")
 
 (defpoll batstat :interval "2s"
    "acpi -i | head -n 1 | cut -c 1-40")
 
 (defpoll wetstat :interval "600s"
-   "curl -s 'wttr.in/Tokyo?format=%c+%t+%w+%h'")
+   "curl -s 'wttr.in/Tokyo?format=%c+%t+%w+%h' | head -1")
 
 (defpoll focusapp :interval "1s"
    "hyprctl activewindow | grep class | awk '{print $2}'")
