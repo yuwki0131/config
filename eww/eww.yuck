@@ -1,8 +1,8 @@
 (defwidget bar-widget []
   (box :orientation "h" :space-evenly false :class "bar-widget"
-       (left-info :halign "start")
+       (left-info)
        (box :class "spacer" :hexpand true)
-       (system-info :halign "end")))
+       (system-info)))
 
 (defwidget left-info []
   (box :orientation "h" :space-evenly false :halign "start"
@@ -44,8 +44,7 @@
            :max 101
            :value value
 	   :class classname)
-    (box :class "textspec" :space-evenly false
-      {round(value, 0)} "%")
+    (box :class "textspec" :space-evenly false {round(value, 0)} "%")
       ))
 
 (defpoll time :interval "1s" "date") ; '+%Y/%b/%d time: %H:%M:%S'
