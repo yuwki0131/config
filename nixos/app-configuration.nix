@@ -73,6 +73,7 @@
     sl
     silver-searcher
     xclip
+    eza # as exa "exa has been removed"
 
     ## monitoring
     htop

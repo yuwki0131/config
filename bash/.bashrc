@@ -3,7 +3,9 @@
 alias rc='sudo nixos-rebuild switch'
 alias sl='ls'
 alias xcp='xclip -selection clipboard'
+alias la='exa -lha --git'
 
+# jumper
 alias cf='cd ~/myconfig/config/'
 
 # shortcuts
@@ -17,6 +19,7 @@ alias sshotrc='sh ~/myconfig/config/tools/screen-captures/capture.sh region clip
 ## git
 alias gd='git diff'
 alias ga='git add'
+alias gs='git status'
 alias gc='git commit -m'
 alias gp='git push origin'
 
