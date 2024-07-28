@@ -88,3 +88,8 @@ $ mkdir ~/myconfig/wallpapers
 $ mv <wallpaper.jpg> ~/myconfig/wallpapers
 ```
 
+## Tips
+
+### Dropbox
+
+use maestral
