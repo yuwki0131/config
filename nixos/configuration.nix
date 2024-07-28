@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
+      /etc/nixos/user-configuration.nix
+      /etc/nixos/env-configuration.nix
       /etc/nixos/app-configuration.nix
     ];
 
@@ -115,15 +117,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.yuwki0131 = {
-    isNormalUser = true;
-    description = "yuwki0131";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
-  };
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
