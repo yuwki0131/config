@@ -11,6 +11,8 @@ nixos https://nixos.org/channels/nixos-24.05
 
 ### nixos configuration
 
+#### link configuration
+
 ```
 $ mkdir myconfig
 $ cd myconfig
@@ -18,6 +20,41 @@ $ git clone git@github.com:yuwki0131/config.git
 $ mv /etc/nixos/configuration.nix .
 $ sudo ln -s ~/myconfig/config/nixos/configuration.nix /etc/nixos/configuration.nix
 $ sudo ln -s ~/myconfig/config/nixos/app-configuration.nix /etc/nixos/app-configuration.nix
+```
+
+#### setup user configuration
+
+```
+$ touch /etc/nixos/user-configuration.nix
+```
+
+```
+{ pkgs, ... }:
+
+{
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.<user-name> = {
+    <details>
+  };
+}
+```
+
+#### setup environmental configuration
+
+```
+$ touch /etc/nixos/env-configuration.nix
+```
+
+```
+{
+  <details ....>
+}
+```
+
+#### rebuild
+
+
+```
 $ sudo nixos-rebuild switch
 ```
 
