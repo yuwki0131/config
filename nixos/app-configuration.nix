@@ -38,6 +38,9 @@
     ## file tools
     meld
 
+    ## reader
+    foliate
+
     ## network tools
     speedtest-cli
     fast-cli
