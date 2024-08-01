@@ -62,6 +62,10 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.cinnamon.enable = true;
 
+  # Enable the KDE plasma Desktop Environment
+  services.displayManager.sddm.enable = false;
+  services.xserver.desktopManager.plasma5.enable = true;
+
   # flatpak
   services.flatpak.enable = true;
 
@@ -125,6 +129,7 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "yuwki0131";
+  # can select "plasma5" or "cinnamon"
   services.displayManager.defaultSession = "hyprland";
 
   # Allow unfree packages
