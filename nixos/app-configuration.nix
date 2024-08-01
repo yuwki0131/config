@@ -97,6 +97,9 @@
     hyprpaper
     eww
 
+    ## app platform
+    flatpak
+
     ## for screen capture
     slurp
     grim
