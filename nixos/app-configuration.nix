@@ -17,9 +17,9 @@
     luakit
 
     ## terminals
-    terminator
     kitty
     alacritty
+    konsole
 
     ## text editors
     vscode
@@ -30,7 +30,6 @@
     inkscape
     gimp
     pinta
-    tilix
     feh
     capture
     gcolor3
