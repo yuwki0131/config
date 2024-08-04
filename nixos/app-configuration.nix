@@ -98,6 +98,9 @@
     ## hyprland
     hyprpaper
     eww
+    hyprcursor
+    kdePackages.breeze
+    bibata-cursors
 
     ## app platform
     flatpak
