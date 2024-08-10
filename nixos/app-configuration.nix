@@ -144,6 +144,10 @@
     python311Packages.pip
     openjdk
     gradle
+    elmPackages.elm
+    purescript
+    spago
+    purs-nix
 
     ## db
     dbeaver-bin
