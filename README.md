@@ -1,6 +1,6 @@
 # Desktop Environment Configuration
 
-<img src="docs/imgs/screenshot.png" width="200" hspace="10">
+<img src="docs/imgs/screenshot.png" hspace="10">
 
 ## nix channel version
 
