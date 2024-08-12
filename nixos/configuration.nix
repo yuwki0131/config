@@ -85,6 +85,7 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       nerdfonts
+      hackgen-font
     ];
     fontDir.enable = true;
     fontconfig = {
