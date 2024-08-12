@@ -68,6 +68,12 @@ $ sudo nixos-rebuild switch
 $ ln -s ~/myconfig/config/bash/.bashrc ~/.bashrc
 ```
 
+#### alacritty
+
+```
+$ ln -s ~/myconfig/config/alacritty ~/.config/alacritty
+```
+
 #### vim
 
 ```

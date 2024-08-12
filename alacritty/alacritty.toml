@@ -1,0 +1,34 @@
+[window]
+dimensions = { columns = 80, lines = 24 }
+position = { x = 50, y = 50 }
+padding = { x = 8, y = 8 }
+decorations = "full"
+startup_mode = "Windowed"
+
+[font]
+normal = { family = "HackGen35 Console", style = "Regular" }
+size = 12
+offset = { x = 0, y = 0 }
+
+[colors]
+[colors.primary]
+background = "0x101010"
+foreground = "0xffffff"
+
+[colors.normal]
+black = "0x333333"
+red = "0xe5266a"
+green = "0x3cb371"
+yellow = "0xff4c00"
+blue = "0x0997B6"
+magenta = "0xe5266a"
+cyan = "0x0997b6"
+white = "0xffffff"
+
+[cursor]
+style = "Beam"
+blink_interval = 500
+
+[env]
+HYPRLAND_CURSOR_THEME = "Breeze_Snow"
+HYPRLAND_CURSOR_SIZE = "24"
