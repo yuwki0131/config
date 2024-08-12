@@ -14,7 +14,7 @@
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -73,7 +73,7 @@
   services.xserver = {
     xkb.layout = "jp";
     xkb.variant = "";
-    xkb.options = "ctrl:swapcaps"; 
+    xkb.options = "ctrl:swapcaps";
   };
 
   # Configure console keymap
