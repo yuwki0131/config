@@ -3,7 +3,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [    
+  environment.systemPackages = with pkgs; [
 
     #########################################
     ## GUI Tools
@@ -145,9 +145,6 @@
     openjdk
     gradle
     elmPackages.elm
-    purescript
-    spago
-    purs-nix
 
     ## db
     dbeaver-bin
