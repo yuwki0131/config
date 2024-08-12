@@ -22,6 +22,7 @@ alias gd='git diff'
 alias ga='git add'
 alias gs='git status'
 alias gc='git commit -m'
+alias greset='git checkout -- '
 alias gp='git push origin'
 
 ## chrome
