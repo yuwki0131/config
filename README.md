@@ -60,29 +60,33 @@ $ touch /etc/nixos/env-configuration.nix
 $ sudo nixos-rebuild switch
 ```
 
-### bash
+### link app configurations
+
+#### bash
 
 ```
 $ ln -s ~/myconfig/config/bash/.bashrc ~/.bashrc
 ```
 
-### vim
+#### vim
 
 ```
 $ ln -s ~/myconfig/config/.vimrc ~/.vimrc
 ```
 
-### hyprland
+#### hyprland
 
 ```
 $ ln -s ~/myconfig/config/hypr ~/.config/hypr
 ```
 
-### eww
+#### eww
 
 ```
 $ ln -s ~/myconfig/config/eww ~/.config/eww
 ```
+
+### other settings
 
 #### wallpaper
 ```
