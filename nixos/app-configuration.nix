@@ -131,6 +131,7 @@
 
     ## for nix
     nixpkgs-fmt
+    deadnix
 
     #########################################
     ## For Dev
