@@ -16,18 +16,18 @@ nixos https://nixos.org/channels/nixos-24.05
 #### link configuration
 
 ```
-$ mkdir myconfig
-$ cd myconfig
-$ git clone git@github.com:yuwki0131/config.git
-$ mv /etc/nixos/configuration.nix .
-$ sudo ln -s ~/myconfig/config/nixos/configuration.nix /etc/nixos/configuration.nix
-$ sudo ln -s ~/myconfig/config/nixos/app-configuration.nix /etc/nixos/app-configuration.nix
+mkdir myconfig
+cd myconfig
+git clone git@github.com:yuwki0131/config.git
+mv /etc/nixos/configuration.nix .
+sudo ln -s ~/myconfig/config/nixos/configuration.nix /etc/nixos/configuration.nix
+sudo ln -s ~/myconfig/config/nixos/app-configuration.nix /etc/nixos/app-configuration.nix
 ```
 
 #### setup user configuration
 
 ```
-$ touch /etc/nixos/user-configuration.nix
+touch /etc/nixos/user-configuration.nix
 ```
 
 ```
@@ -44,7 +44,7 @@ $ touch /etc/nixos/user-configuration.nix
 #### setup environmental configuration
 
 ```
-$ touch /etc/nixos/env-configuration.nix
+touch /etc/nixos/env-configuration.nix
 ```
 
 ```
@@ -65,39 +65,39 @@ $ sudo nixos-rebuild switch
 #### bash
 
 ```
-$ ln -s ~/myconfig/config/bash/.bashrc ~/.bashrc
+ln -s ~/myconfig/config/bash/.bashrc ~/.bashrc
 ```
 
 #### alacritty
 
 ```
-$ ln -s ~/myconfig/config/alacritty ~/.config/alacritty
+ln -s ~/myconfig/config/alacritty ~/.config/alacritty
 ```
 
 #### vim
 
 ```
-$ ln -s ~/myconfig/config/.vimrc ~/.vimrc
+ln -s ~/myconfig/config/.vimrc ~/.vimrc
 ```
 
 #### hyprland
 
 ```
-$ ln -s ~/myconfig/config/hypr ~/.config/hypr
+ln -s ~/myconfig/config/hypr ~/.config/hypr
 ```
 
 #### eww
 
 ```
-$ ln -s ~/myconfig/config/eww ~/.config/eww
+ln -s ~/myconfig/config/eww ~/.config/eww
 ```
 
 ### other settings
 
 #### wallpaper
 ```
-$ mkdir ~/myconfig/wallpapers
-$ mv <wallpaper.jpg> ~/myconfig/wallpapers/wallpaper.jpg
+mkdir ~/myconfig/wallpapers
+mv <wallpaper.jpg> ~/myconfig/wallpapers/wallpaper.jpg
 ```
 
 ## Tips
