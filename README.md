@@ -97,7 +97,7 @@ $ ln -s ~/myconfig/config/eww ~/.config/eww
 #### wallpaper
 ```
 $ mkdir ~/myconfig/wallpapers
-$ mv <wallpaper.jpg> ~/myconfig/wallpapers
+$ mv <wallpaper.jpg> ~/myconfig/wallpapers/wallpaper.jpg
 ```
 
 ## Tips
