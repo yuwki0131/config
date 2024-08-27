@@ -15,6 +15,7 @@
     firefox
     nyxt
     luakit
+    tor-browser-bundle-bin
 
     ## terminals
     kitty
