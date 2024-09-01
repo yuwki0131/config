@@ -163,6 +163,9 @@
     ## git
     git
     gitkraken
+    github-desktop
+    git-cola
+    gh
 
     ## dev tools
     jq
