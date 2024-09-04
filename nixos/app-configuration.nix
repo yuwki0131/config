@@ -78,6 +78,7 @@
     xclip
     eza # as exa "exa has been removed"
     httpie
+    sttr
 
     ## monitoring
     htop
