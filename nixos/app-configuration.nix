@@ -123,9 +123,13 @@
 
     ## audio
     alsaUtils
+    pulseaudioFull
 
     ## bluetooth
     blueman
+
+    ## keylogger
+    logkeys
 
     ## npu
     openvino
