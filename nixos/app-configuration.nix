@@ -78,6 +78,7 @@
     xclip
     eza # as exa "exa has been removed"
     httpie
+    sttr
 
     ## monitoring
     htop
@@ -167,6 +168,9 @@
     ## git
     git
     gitkraken
+    github-desktop
+    git-cola
+    gh
 
     ## dev tools
     jq
