@@ -33,6 +33,9 @@
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
+  # for dual booting with Windows
+  time.hardwareClockInLocalTime = true;
+
   # Select internationalisation properties.
   i18n.defaultLocale = "ja_JP.UTF-8";
 
