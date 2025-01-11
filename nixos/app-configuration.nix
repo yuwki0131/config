@@ -34,6 +34,8 @@
     feh
     capture
     gcolor3
+    libheif
+    ffmpeg
 
     ## file tools
     meld
@@ -146,7 +148,7 @@
     ## langs
     rustc
     cargo
-    asdf
+    asdf-vm
     nodejs
     go
     go-migrate
@@ -158,18 +160,27 @@
 
     ## db
     dbeaver-bin
+    pgadmin
     mysql
     redis
 
     ## docker
     docker
     docker-compose
+    lazydocker
+    minikube
+    k3s
+    k9s
+    kubectl
+    kubernetes
 
     ## git
     git
+    gitFull
     gitkraken
     github-desktop
     git-cola
+    tig
     gh
 
     ## dev tools
