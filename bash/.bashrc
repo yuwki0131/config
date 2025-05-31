@@ -81,8 +81,3 @@ alias doc='google-chrome-stable &'
 alias doc='google-chrome-stable &'
 
 ## language config
-
-### java
-
-export JAVA_HOME=/nix/store/4h8j6il1w6kv0py8965hfv7h41gsc0pj-openjdk-21.0.3+9/lib/openjdk/bin/java
-export PATH=$JAVA_HOME/bin:$PATH
