@@ -3,6 +3,7 @@
 { config, pkgs, ... }:
 
 {
+
   environment.systemPackages = with pkgs; [
 
     #########################################
@@ -26,6 +27,7 @@
     vscode
     vim
     emacs
+    jetbrains.idea-community
 
     ## graphc tools
     inkscape
