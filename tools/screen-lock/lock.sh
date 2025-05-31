@@ -1,0 +1,19 @@
+swaylock \
+ --screenshots \
+ --effect-blur 7x5 \
+ --fade-in 0.2 \
+ --clock \
+ --indicator \
+ --indicator-radius 100 \
+ --indicator-thickness 7 \
+ --effect-vignette 0.5:0.5 \
+ --ring-color 5e81ac \
+ --inside-color 3b4252 \
+ --line-color 88c0d0 \
+ --text-color d8dee9 \
+ --ring-wrong-color bf616a \
+ --inside-wrong-color 3b4252 \
+ --text-wrong-color d8dee9 \
+ --ring-ver-color a3be8c \
+ --inside-ver-color 3b4252 \
+ --text-ver-color d8dee9
