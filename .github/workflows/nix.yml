@@ -13,6 +13,18 @@ jobs:
       - uses: cachix/install-nix-action@v22
         with:
           nix_path: nixpkgs=channel:nixos-24.05
+      - name: Prepare hardware configuration
+        run: |
+          sudo mkdir -p /etc/nixos
+          cat <<'EOF' | sudo tee /etc/nixos/hardware-configuration.nix
+{ config, lib, pkgs, modulesPath, ... }:
+{
+  fileSystems."/" = {
+    device = "none";
+    fsType = "tmpfs";
+  };
+}
+EOF
       - name: Run flake check
         run: |
-          nix flake check
+          nix flake check --impure
