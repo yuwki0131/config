@@ -8,10 +8,10 @@
   imports =
     [
       # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-      /etc/nixos/user-configuration.nix
-      /etc/nixos/env-configuration.nix
-      /etc/nixos/app-configuration.nix
+      ./hardware-configuration.nix
+      ./user-configuration.nix
+      ./env-configuratino.nix
+      ./app-configuration.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
