@@ -2,16 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
     [
       # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-      /etc/nixos/user-configuration.nix
-      /etc/nixos/env-configuration.nix
-      /etc/nixos/app-configuration.nix
+      ./hardware-configuration.nix
+    ]
+    ++ lib.optional (builtins.pathExists ./user-configuration.nix) ./user-configuration.nix
+    ++ [
+      ./env-configuration.nix
+      ./app-configuration.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
