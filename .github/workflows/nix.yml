@@ -17,14 +17,14 @@ jobs:
         run: |
           sudo mkdir -p /etc/nixos
           cat <<'EOF' | sudo tee /etc/nixos/hardware-configuration.nix
-{ config, lib, pkgs, modulesPath, ... }:
-{
-  fileSystems."/" = {
-    device = "none";
-    fsType = "tmpfs";
-  };
-}
-EOF
+          { config, lib, pkgs, modulesPath, ... }:
+          {
+            fileSystems."/" = {
+              device = "none";
+              fsType = "tmpfs";
+            };
+          }
+          EOF
       - name: Run flake check
         run: |
           nix flake check --impure
