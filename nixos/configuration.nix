@@ -9,7 +9,6 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./user-configuration.nix
       ./env-configuration.nix
       ./app-configuration.nix
     ];
