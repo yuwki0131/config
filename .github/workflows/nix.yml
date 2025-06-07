@@ -16,7 +16,7 @@ jobs:
       - name: Prepare hardware configuration
         run: |
           sudo mkdir -p /etc/nixos
-          echo '{ }: {}' | sudo tee /etc/nixos/hardware-configuration.nix
+          echo '{ config, lib, pkgs, modulesPath, ... }: {}' | sudo tee /etc/nixos/hardware-configuration.nix
       - name: Run flake check
         run: |
           nix flake check --impure
