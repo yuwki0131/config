@@ -24,6 +24,23 @@ sudo ln -s ~/myconfig/config/nixos/configuration.nix /etc/nixos/configuration.ni
 sudo ln -s ~/myconfig/config/nixos/app-configuration.nix /etc/nixos/app-configuration.nix
 ```
 
+#### setup user configuration
+
+```
+touch /etc/nixos/user-configuration.nix
+```
+
+```
+{ pkgs, ... }:
+
+{
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.<user-name> = {
+    <details>
+  };
+}
+```
+
 #### setup environmental configuration
 
 ```
