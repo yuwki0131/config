@@ -2,8 +2,15 @@ name: Nix Flake Check
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
+      - work
+      - main
   pull_request:
+    branches:
+      - master
+      - work
+      - main
 
 jobs:
   check:
