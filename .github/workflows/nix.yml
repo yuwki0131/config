@@ -24,7 +24,8 @@ jobs:
       - name: Prepare hardware configuration
         run: |
           pwd
-          sed -i 's|/etc/nixos/hardware-configuration.nix||' ./nixos/configuration.nix
+          sed -i 's|/etc/nixos/hardware-configuration.nix|./nixos/testfiles/hardware-configuration.nix|' ./nixos/configuration.nix
+          cat ./nixos/configuration.nix
       - name: Run flake check
         run: |
           nix flake check --impure
