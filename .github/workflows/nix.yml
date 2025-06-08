@@ -5,13 +5,14 @@ on:
     branches:
       - master
       - work
-      - main
+      - codex/*
+      - feature/*
   pull_request:
     branches:
       - master
       - work
-      - main
-
+      - codex/*
+      - feature/*
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -23,15 +24,7 @@ jobs:
       - name: Prepare hardware configuration
         run: |
           sudo mkdir -p /etc/nixos
-          cat <<'EOF' | sudo tee /etc/nixos/hardware-configuration.nix
-{ config, lib, pkgs, modulesPath, ... }:
-{
-  fileSystems."/" = {
-    device = "none";
-    fsType = "tmpfs";
-  };
-}
-EOF
+          sudo cp ./testfiles/hardware-configuration.nix /etc/nixos
       - name: Run flake check
         run: |
           nix flake check --impure
