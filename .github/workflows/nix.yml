@@ -23,8 +23,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-24.05
       - name: Prepare hardware configuration
         run: |
-          sudo mkdir -p /etc/nixos
-          sed -i 's|/etc/nixos/hardware-configuration.nix|.github/workflows/testfiles/hardware-configuration.nix|' ./nixos/configuration.nix
+          pwd
       - name: Run flake check
         run: |
           nix flake check --impure
