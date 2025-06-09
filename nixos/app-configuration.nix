@@ -193,6 +193,17 @@
     air # for golang
     cloc
 
+    ## build tools
+    cmake
+    gnumake
+    gcc
+    llvm
+    libtool
+    autoconf
+    automake
+    ncurses
+    pkg-config
+
     #########################################
     ## Trial Apps
     #########################################
