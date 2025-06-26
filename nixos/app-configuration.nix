@@ -21,7 +21,7 @@
     ## terminals
     kitty
     alacritty
-    konsole
+    # konsole
 
     ## text editors
     vscode
@@ -89,7 +89,7 @@
     powertop
     lm_sensors
     acpi
-    gnome.gnome-system-monitor
+    gnome-system-monitor
     glances
 
     ## system info
@@ -127,7 +127,7 @@
     libinput-gestures
 
     ## audio
-    alsaUtils
+    alsa-utils
     pulseaudioFull
 
     ## bluetooth
@@ -163,7 +163,7 @@
     ## db
     dbeaver-bin
     pgadmin
-    mysql
+    mariadb
     redis
 
     ## docker
