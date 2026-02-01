@@ -62,27 +62,21 @@
   };
 
   # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
   # hyprland
   programs.hyprland.enable = true;
 
-  # Enable the Cinnamon Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
-
-  # Enable the KDE plasma Desktop Environment
-  services.displayManager.sddm.enable = false;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  # flatpak
-  services.flatpak.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
     xkb.layout = "jp";
     xkb.variant = "";
-    xkb.options = "ctrl:swapcaps";
+    xkb.options = "ctrl:nocaps";
   };
 
   # Configure console keymap
@@ -93,7 +87,7 @@
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      nerdfonts
+      # nerdfonts
       hackgen-font
     ];
     fontDir.enable = true;
@@ -112,13 +106,14 @@
   services.blueman.enable = true;
 
   # audio
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = false;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -160,7 +155,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  programs.mtr.enable = true;
+  # programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
@@ -183,7 +178,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 
   # enable nix-comand & flakes
