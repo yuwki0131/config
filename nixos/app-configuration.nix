@@ -51,6 +51,7 @@
     wireshark
     nmap
     nload
+    iw
 
     ## sns
     slack
@@ -150,8 +151,9 @@
     ## langs
     rustc
     cargo
+    rustup
     asdf-vm
-    nodejs
+    nodejs_20
     go
     go-migrate
     python3
@@ -176,6 +178,9 @@
     kubectl
     kubernetes
 
+    ## vm
+    virtualbox
+
     ## git
     git
     gitFull
@@ -192,6 +197,7 @@
     wget
     air # for golang
     cloc
+    awscli2
 
     ## build tools
     cmake
