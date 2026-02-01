@@ -90,7 +90,7 @@
     powertop
     lm_sensors
     acpi
-    gnome-system-monitor
+    gnome.gnome-system-monitor
     glances
 
     ## system info
@@ -209,6 +209,11 @@
     automake
     ncurses
     pkg-config
+
+    ## ai
+    # claude-code
+    # codex-cli
+    # open-code
 
     #########################################
     ## Trial Apps
