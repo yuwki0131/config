@@ -16,7 +16,8 @@
     firefox
     nyxt
     luakit
-    tor-browser-bundle-bin
+    # todo fixo
+    tor-browser
 
     ## terminals
     kitty
@@ -90,7 +91,7 @@
     powertop
     lm_sensors
     acpi
-    gnome.gnome-system-monitor
+    gnome-system-monitor
     glances
 
     ## system info
@@ -164,7 +165,7 @@
 
     ## db
     dbeaver-bin
-    pgadmin
+    pgadmin4
     mariadb
     redis
 
@@ -211,9 +212,9 @@
     pkg-config
 
     ## ai
-    # claude-code
-    # codex-cli
-    # open-code
+    claude-code
+    codex
+    opencode
 
     #########################################
     ## Trial Apps
