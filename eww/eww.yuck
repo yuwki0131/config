@@ -20,22 +20,30 @@
   (box :orientation "h" :space-evenly false :halign "end"
     (metric :label "battery"
             :value {EWW_BATTERY.BAT0.capacity}
-	    :classname "blue-metric")
+	    :classname "blue-metric"
+	    :unit "%")
     (metric :label "cpu"
             :value {EWW_CPU.avg}
-	    :classname "red-metric")
+	    :classname "red-metric"
+	    :unit "%")
     (metric :label "mem"
             :value {EWW_RAM.used_mem_perc}
-	    :classname "red-metric")
+	    :classname "red-metric"
+	    :unit "%")
     (metric :label "disk"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
-	    :classname "red-metric")
+	    :classname "red-metric"
+	    :unit "%")
+    (box :class "half" (metric :label "temp"
+            :value {cputemp}
+	    :classname "red-metric"
+	    :unit "°C"))
     (box :class "infospace" batstat)
     (box :class "infospace" wifistat)
     (box :class "infospace" (box "🔉") volume)
     ))
 
-(defwidget metric [label value classname]
+(defwidget metric [label value classname unit]
   (box :orientation "h"
        :class "metric"
        :space-evenly false
@@ -44,7 +52,7 @@
            :max 101
            :value value
 	   :class classname)
-    (box :class "textspec" :space-evenly false {round(value, 0)} "%")
+    (box :class "textspec" :space-evenly false {round(value, 0)} unit)
       ))
 
 (defpoll time :interval "1s" "date") ; '+%Y/%b/%d time: %H:%M:%S'
@@ -63,6 +71,10 @@
 
 (defpoll volume :interval "1s"
    "amixer get Master | grep -o '[0-9]*%' | head -1")
+
+;; Average CPU temperature (20s polling)
+(defpoll cputemp :interval "20s"
+   "sensors 2>/dev/null | awk '/^Core [0-9]+:/ { if (match($0, /[+][0-9.]+°C/)) { t=substr($0,RSTART+1,RLENGTH-3); sc+=t; cc++ } next } /^(Tdie:|Tctl:|Package id [0-9]+:)/ { if (match($0, /[+][0-9.]+°C/)) { t=substr($0,RSTART+1,RLENGTH-3); sf+=t; cf++ } next } END { if (cc>0) print int(sc/cc+0.5); else if (cf>0) print int(sf/cf+0.5); else print 0 }'")
 
 (defwindow bar
   :monitor 0
