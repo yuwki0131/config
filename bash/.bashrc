@@ -34,9 +34,8 @@ alias search='sh ~/myconfig/config/tools/google-just-to-find-me.sh'
 
 ### bookmarks
 alias google='google-chrome-stable https://www.google.com &'
-alias gmail='google-chrome-stable https://mail.google.com/ &'
+alias gmail='google-chrome-stable https://mail.google.com &'
 alias gpt='google-chrome-stable https://chat.openai.com &'
-alias claude='google-chrome-stable https://claude.ai/chats &'
 alias amazon='google-chrome-stable http://www.amazon.co.jp &'
 alias hatena='google-chrome-stable http://www.hatena.ne.jp &'
 alias youtube='google-chrome-stable http://www.youtube.com &'
@@ -80,4 +79,9 @@ alias doc='google-chrome-stable &'
 alias doc='google-chrome-stable &'
 alias doc='google-chrome-stable &'
 
-## language config
+## ailias
+alias codexd='codex --dangerously-bypass-approvals-and-sandbox'
+alias clauded='claude --dangerously-skip-permissions'
+
+## tasks
+alias altre='cd ~/workspace/altre/app && cargo run'
