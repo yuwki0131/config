@@ -85,6 +85,7 @@
     eza # as exa "exa has been removed"
     httpie
     sttr
+    ripgrep
 
     ## monitoring
     htop
