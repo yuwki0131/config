@@ -16,7 +16,7 @@
       ./app-configuration.nix
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -86,7 +86,7 @@
     packages = with pkgs; [
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       # nerdfonts
       hackgen-font
     ];
@@ -113,7 +113,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -148,6 +148,27 @@
     docker.enable = true;
   };
 
+  # virtual box
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableHardening = false;
+  users.users.yuwki0131.extraGroups = [ "wheel" "networkmanager" "vboxusers" ];
+  services.udev.extraRules = ''
+    KERNEL=="vboxdrvu", GROUP="vboxusers", MODE="0660"
+    '';
+  systemd.slices."user".sliceConfig = {
+    MiscPolicy = "auto";
+
+  # VirtualBox の misc デバイスを許可
+  # /dev/vboxdrv     -> char 10:261
+  # /dev/vboxnetctl  -> char 10:263
+  MiscAllow = [
+    "char-10:261"
+    "char-10:263"
+  ];
+};
+
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -178,7 +199,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 
 
   # enable nix-comand & flakes
