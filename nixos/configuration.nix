@@ -151,7 +151,12 @@
   # virtual box
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableHardening = false;
-  users.users.yuwki0131.extraGroups = [ "wheel" "networkmanager" "vboxusers" ];
+  users.groups.yuwki0131 = {};
+  users.users.yuwki0131 = {
+    isNormalUser = true;
+    group = "yuwki0131";
+    extraGroups = [ "wheel" "networkmanager" "vboxusers" ];
+  };
   services.udev.extraRules = ''
     KERNEL=="vboxdrvu", GROUP="vboxusers", MODE="0660"
     '';
