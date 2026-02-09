@@ -92,7 +92,7 @@
     powertop
     lm_sensors
     acpi
-    gnome-system-monitor
+    gnome.gnome-system-monitor
     glances
 
     ## system info
