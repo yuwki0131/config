@@ -165,6 +165,17 @@
     gradle
     elmPackages.elm
 
+    ## lsp
+    yaml-language-server
+    vscode-langservers-extracted
+    marksman
+    bash-language-server
+    ruby-lsp
+    basedpyright
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    nixd
+
     ## db
     dbeaver-bin
     pgadmin4
