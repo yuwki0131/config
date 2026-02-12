@@ -1,0 +1,7 @@
+# User-specific and environment-specific configuration files
+# These files contain personal information and should not be committed
+nixos/user-configuration.nix
+nixos/env-configuration.nix
+
+# Local monitor configurations (machine-specific)
+hypr/config/local-monitors.conf

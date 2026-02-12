@@ -1,0 +1,36 @@
+# Environment-specific configuration
+# Copy this file to /etc/nixos/env-configuration.nix and customize it for your environment
+
+{ config, pkgs, ... }:
+
+{
+  # Sudo configuration
+  # WARNING: This allows wheel group users to use sudo without password
+  # Consider removing this line for better security
+  security.sudo.wheelNeedsPassword = false;
+
+  # Firewall configuration
+  networking.firewall = {
+    # Open ports as needed for your services
+    allowedTCPPorts = [
+      # 17500  # Dropbox LAN sync
+      # 22     # SSH
+      # 80     # HTTP
+      # 443    # HTTPS
+    ];
+    allowedUDPPorts = [
+      # 17500  # Dropbox LAN sync
+    ];
+  };
+
+  # Optional: Enable Dropbox service
+  # Uncomment the following lines if you use Dropbox
+  # systemd.user.services.dropbox = {
+  #   restartIfChanged = true;
+  #   enable = true;
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.dropbox}/bin/dropbox";
+  #     PassEnvironment = "DISPLAY";
+  #   };
+  # };
+}

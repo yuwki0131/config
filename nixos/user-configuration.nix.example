@@ -1,0 +1,28 @@
+# User configuration
+# Copy this file to /etc/nixos/user-configuration.nix and customize it for your user
+
+{ pkgs, ... }:
+
+{
+  # Define a user account. Don't forget to set a password with 'passwd'.
+  users.users.<your-username> = {
+    isNormalUser = true;
+    description = "<Your Full Name>";
+    extraGroups = [ "wheel" "networkmanager" "vboxusers" ];
+    packages = with pkgs; [
+      # Add user-specific packages here
+    ];
+    openssh.authorizedKeys.keys = [
+      # Add your SSH public key here
+      # "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQ..."
+    ];
+  };
+
+  # Set your hostname
+  networking.hostName = "<your-hostname>";
+
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "<your-username>";
+
+}

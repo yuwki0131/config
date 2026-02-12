@@ -131,9 +131,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "yuwki0131";
   # can select "plasma5" or "cinnamon"
   services.displayManager.defaultSession = "hyprland";
 
@@ -151,7 +148,6 @@
   # virtual box
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableHardening = false;
-  users.users.yuwki0131.extraGroups = [ "wheel" "networkmanager" "vboxusers" ];
   services.udev.extraRules = ''
     KERNEL=="vboxdrvu", GROUP="vboxusers", MODE="0660"
     '';
