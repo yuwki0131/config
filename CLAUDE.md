@@ -26,7 +26,11 @@ The repository expects to be cloned to `~/myconfig/config/` and symlinked to sys
 - `sudo ln -s ~/myconfig/config/nixos/configuration.nix /etc/nixos/configuration.nix`
 - `sudo ln -s ~/myconfig/config/nixos/app-configuration.nix /etc/nixos/app-configuration.nix`
 
-User-specific files (`user-configuration.nix`, `env-configuration.nix`) must be created in `/etc/nixos/` manually.
+User-specific files (`user-configuration.nix`, `env-configuration.nix`) must be created in `/etc/nixos/` by copying from example files:
+- `sudo cp ~/myconfig/config/nixos/user-configuration.nix.example /etc/nixos/user-configuration.nix`
+- `sudo cp ~/myconfig/config/nixos/env-configuration.nix.example /etc/nixos/env-configuration.nix`
+
+These files are not tracked in git (.gitignore) as they contain personal information.
 
 ## Common Commands
 

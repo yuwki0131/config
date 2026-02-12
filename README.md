@@ -26,32 +26,32 @@ sudo ln -s ~/myconfig/config/nixos/app-configuration.nix /etc/nixos/app-configur
 
 #### setup user configuration
 
-```
-touch /etc/nixos/user-configuration.nix
+exampleファイルをコピーして、自分の情報に書き換えます：
+
+```bash
+sudo cp ~/myconfig/config/nixos/user-configuration.nix.example /etc/nixos/user-configuration.nix
+sudo vim /etc/nixos/user-configuration.nix
 ```
 
-```
-{ pkgs, ... }:
-
-{
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.<user-name> = {
-    <details>
-  };
-}
-```
+編集する項目：
+- `<your-username>` → 自分のユーザー名
+- `<Your Full Name>` → フルネーム
+- `<your-hostname>` → マシンのホスト名
+- SSH公開鍵（必要な場合）
 
 #### setup environmental configuration
 
-```
-touch /etc/nixos/env-configuration.nix
+exampleファイルをコピーして、環境に合わせて設定します：
+
+```bash
+sudo cp ~/myconfig/config/nixos/env-configuration.nix.example /etc/nixos/env-configuration.nix
+sudo vim /etc/nixos/env-configuration.nix
 ```
 
-```
-{
-  <details ....>
-}
-```
+編集する項目：
+- ファイアウォールのポート設定
+- Dropboxの有効化（必要な場合）
+- sudoパスワード設定（セキュリティ要件に応じて）
 
 #### rebuild
 
