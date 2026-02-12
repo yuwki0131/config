@@ -158,14 +158,14 @@
   systemd.slices."user".sliceConfig = {
     MiscPolicy = "auto";
 
-  # VirtualBox の misc デバイスを許可
-  # /dev/vboxdrv     -> char 10:261
-  # /dev/vboxnetctl  -> char 10:263
-  MiscAllow = [
-    "char-10:261"
-    "char-10:263"
-  ];
-};
+    # VirtualBox の misc デバイスを許可
+    # /dev/vboxdrv     -> char 10:261
+    # /dev/vboxnetctl  -> char 10:263
+    MiscAllow = [
+      "char-10:261"
+      "char-10:263"
+    ];
+  };
 
 
 
