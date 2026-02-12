@@ -99,6 +99,7 @@
     neofetch
     lshw
     wlr-randr
+    usbutils
 
     #########################################
     ## System & System Utilities
