@@ -41,6 +41,12 @@ key = "V"
 mods = "Control"
 action = "Paste"
 
+[scrolling]
+# Number of lines in the scrollback buffer
+history = 100000
+# Scrolling speed multiplier for mouse wheel and key scrolls
+multiplier = 3
+
 [[keyboard.bindings]]
 key = "C"
 mods = "Control|Shift"
