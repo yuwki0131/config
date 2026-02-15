@@ -130,6 +130,9 @@
     libinput
     libinput-gestures
 
+    ## for emacs
+    cmigemo
+
     ## audio
     alsa-utils
     pulseaudioFull
