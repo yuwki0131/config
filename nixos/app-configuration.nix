@@ -132,6 +132,7 @@
 
     ## for emacs
     cmigemo
+    fd
 
     ## audio
     alsa-utils
