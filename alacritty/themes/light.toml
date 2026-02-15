@@ -1,0 +1,30 @@
+[colors]
+[colors.primary]
+# Derived from emacs.d-v4/v5 xolor palette (white-leaning)
+background = "0xFFFFFF"
+foreground = "0x101010"
+
+[colors.normal]
+black = "0x333333"      # background/inv from Emacs palette
+red = "0xE5266A"        # emphasis
+green = "0x3CB371"      # string-like
+yellow = "0xFF4C00"     # secondary (orange)
+blue = "0x0997B6"       # main (darkcyan)
+magenta = "0xE5266A"    # emphasis
+cyan = "0x0997B6"       # main
+white = "0xE0E0E0"      # foreground/inv
+
+[colors.bright]
+black = "0x666666"      # out-strong
+red = "0xE5266A"
+green = "0x3CB371"
+yellow = "0xFF4C00"
+blue = "0x0997B6"
+magenta = "0xE5266A"
+cyan = "0x0997B6"
+white = "0xF0F0F0"      # focus
+
+[colors.selection]
+text = "0x101010"
+background = "0xFC9CBF" # emphasis/weak
+
