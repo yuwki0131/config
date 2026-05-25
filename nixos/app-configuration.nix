@@ -3,7 +3,6 @@
 { config, pkgs, ... }:
 
 {
-
   environment.systemPackages = with pkgs; [
 
     #########################################
@@ -232,6 +231,7 @@
     claude-code
     codex
     opencode
+    github-copilot-cli
 
     #########################################
     ## Trial Apps

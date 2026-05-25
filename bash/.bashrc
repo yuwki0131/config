@@ -82,6 +82,7 @@ alias doc='google-chrome-stable &'
 ## ailias
 alias codexd='codex --dangerously-bypass-approvals-and-sandbox'
 alias clauded='claude --dangerously-skip-permissions'
+alias copa='copilot --allow-all'
 
 ## tasks
 alias altre='cd ~/workspace/altre/app && cargo run'
