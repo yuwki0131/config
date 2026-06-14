@@ -6,7 +6,7 @@
 
 ```
 $ sudo nix-channel --list
-nixos https://nixos.org/channels/nixos-24.05
+nixos https://nixos.org/channels/nixos-26.05
 ```
 
 ## setup

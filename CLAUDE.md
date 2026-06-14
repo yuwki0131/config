@@ -49,10 +49,10 @@ sudo nix-collect-garbage
 
 ### NixOS Channel Information
 
-The system uses nixos-24.05 channel:
+The system uses nixos-26.05 channel:
 ```bash
 sudo nix-channel --list
-# Expected: nixos https://nixos.org/channels/nixos-24.05
+# Expected: nixos https://nixos.org/channels/nixos-26.05
 ```
 
 ### Application Configuration Linking
