@@ -29,9 +29,11 @@ sudo ln -s ~/myconfig/config/nixos/app-configuration.nix /etc/nixos/app-configur
 exampleファイルをコピーして、自分の情報に書き換えます：
 
 ```bash
-sudo cp ~/myconfig/config/nixos/user-configuration.nix.example /etc/nixos/user-configuration.nix
-sudo vim /etc/nixos/user-configuration.nix
+cp ~/myconfig/config/nixos/user-configuration.nix.example ~/myconfig/config/nixos/user-configuration.nix
+vim ~/myconfig/config/nixos/user-configuration.nix
 ```
+
+flake では untracked な repo 内ファイルが評価対象から外れるため、`nixos/user-configuration.nix` を作ったら `git add nixos/user-configuration.nix` しておく必要があります。
 
 編集する項目：
 - `<your-username>` → 自分のユーザー名
@@ -39,13 +41,15 @@ sudo vim /etc/nixos/user-configuration.nix
 - `<your-hostname>` → マシンのホスト名
 - SSH公開鍵（必要な場合）
 
+`services.displayManager.autoLogin.user` は、通常ユーザーが 1 人だけ定義されている場合は自動でそのユーザー名が使われます。
+
 #### setup environmental configuration
 
 exampleファイルをコピーして、環境に合わせて設定します：
 
 ```bash
-sudo cp ~/myconfig/config/nixos/env-configuration.nix.example /etc/nixos/env-configuration.nix
-sudo vim /etc/nixos/env-configuration.nix
+cp ~/myconfig/config/nixos/env-configuration.nix.example ~/myconfig/config/nixos/env-configuration.nix
+vim ~/myconfig/config/nixos/env-configuration.nix
 ```
 
 編集する項目：

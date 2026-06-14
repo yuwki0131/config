@@ -4,6 +4,11 @@
 
 { config, lib, pkgs, ... }:
 
+let
+  normalUserNames = builtins.filter
+    (name: config.users.users.${name}.isNormalUser or false)
+    (builtins.attrNames config.users.users);
+in
 {
   imports =
     [
@@ -16,12 +21,35 @@
       ./app-configuration.nix
     ];
 
+  assertions = [
+    {
+      assertion = normalUserNames != [ ];
+      message = ''
+        No normal user is defined.
+        Create nixos/user-configuration.nix from nixos/user-configuration.nix.example
+        and define users.users.<your-username>.
+      '';
+    }
+    {
+      assertion =
+        (!config.services.displayManager.autoLogin.enable)
+        || (
+          config.services.displayManager.autoLogin.user != ""
+          && builtins.hasAttr config.services.displayManager.autoLogin.user config.users.users
+        );
+      message = ''
+        services.displayManager.autoLogin.user must match a defined users.users entry.
+        If you only have one normal user, you can omit autoLogin.user and it will be inferred.
+      '';
+    }
+  ];
+
   boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.systemd-boot.configurationLimit = 100;
   boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
   boot.loader.efi.efiSysMountPoint = "/efi";
 
@@ -137,6 +165,11 @@
 
   # can select "plasma5" or "cinnamon"
   services.displayManager.defaultSession = "hyprland";
+  services.displayManager.autoLogin.user = lib.mkDefault (
+    if builtins.length normalUserNames == 1
+    then builtins.head normalUserNames
+    else ""
+  );
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
