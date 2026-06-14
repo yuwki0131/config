@@ -8,7 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
     ]
     ++ lib.optional (builtins.pathExists ./user-configuration.nix) ./user-configuration.nix
     ++ [
@@ -21,6 +21,9 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 2;
+  boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
+  boot.loader.efi.efiSysMountPoint = "/efi";
 
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -57,7 +60,8 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    enable = true;
+    type = "fcitx5";
     fcitx5.addons = [ pkgs.fcitx5-mozc ];
   };
 
@@ -150,7 +154,7 @@
   virtualisation.virtualbox.host.enableHardening = false;
   services.udev.extraRules = ''
     KERNEL=="vboxdrvu", GROUP="vboxusers", MODE="0660"
-    '';
+  '';
   systemd.slices."user".sliceConfig = {
     MiscPolicy = "auto";
 
@@ -200,7 +204,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Keep this at the release used for the first install.
 
 
   # enable nix-comand & flakes

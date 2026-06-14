@@ -27,7 +27,7 @@
     vscode
     vim
     emacs
-    jetbrains.idea-community
+    # jetbrains.idea-community
 
     ## graphc tools
     inkscape
@@ -47,7 +47,7 @@
 
     ## network tools
     speedtest-cli
-    fast-cli
+    # fast-cli
     wireshark
     nmap
     nload
@@ -95,7 +95,7 @@
     glances
 
     ## system info
-    neofetch
+    # neofetch
     lshw
     wlr-randr
     usbutils
@@ -159,14 +159,11 @@
     cargo
     rustup
     asdf-vm
-    nodejs_20
     go
     go-migrate
     python3
-    python311Packages.pip
     openjdk
     gradle
-    elmPackages.elm
 
     ## lsp
     yaml-language-server
@@ -175,15 +172,13 @@
     bash-language-server
     ruby-lsp
     basedpyright
-    nodePackages.typescript
-    nodePackages.typescript-language-server
     nixd
 
     ## db
-    dbeaver-bin
-    pgadmin4
-    mariadb
-    redis
+    # dbeaver-bin
+    # pgadmin4
+    # mariadb
+    # redis
 
     ## docker
     docker
@@ -196,7 +191,7 @@
     kubernetes
 
     ## vm
-    virtualbox
+    # virtualbox
 
     ## git
     git
@@ -225,7 +220,7 @@
     autoconf
     automake
     ncurses
-    pkg-config
+    # pkg-config
 
     ## ai
     claude-code
