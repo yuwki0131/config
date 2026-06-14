@@ -151,7 +151,6 @@
 
   # virtual box
   virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableHardening = false;
   services.udev.extraRules = ''
     KERNEL=="vboxdrvu", GROUP="vboxusers", MODE="0660"
   '';
