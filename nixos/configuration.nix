@@ -178,6 +178,10 @@
     CHROME_PASSWORD_STORE = "basic";
   };
 
+  # Allow prebuilt native npm binaries to run on NixOS.
+  # This helps tools such as sharp, esbuild, and Playwright when used from pnpm.
+  programs.nix-ld.enable = true;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
