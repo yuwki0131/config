@@ -57,7 +57,7 @@ sudo vim /etc/nixos/env-configuration.nix
 
 
 ```
-$ sudo nixos-rebuild switch
+$ sudo nixos-rebuild switch --flake ~/myconfig/config#nixos
 ```
 
 ### link app configurations

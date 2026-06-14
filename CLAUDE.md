@@ -38,7 +38,7 @@ These files are not tracked in git (.gitignore) as they contain personal informa
 
 ```bash
 # Apply configuration changes
-sudo nixos-rebuild switch
+sudo nixos-rebuild switch --flake ~/myconfig/config#nixos
 
 # Garbage collection (remove generations older than 30 days)
 sudo nix-collect-garbage --delete-older-than 30d
@@ -134,4 +134,4 @@ The main `hypr/hyprland.conf` sources modular config files. Edit the specific co
 
 ### Testing Configuration Changes
 
-Always test NixOS configuration changes with `sudo nixos-rebuild switch`. The system will validate the configuration before applying.
+Always test NixOS configuration changes with `sudo nixos-rebuild switch --flake ~/myconfig/config#nixos`. The system will validate the configuration before applying.
