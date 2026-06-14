@@ -50,7 +50,6 @@ sudo vim /etc/nixos/env-configuration.nix
 
 編集する項目：
 - ファイアウォールのポート設定
-- Dropboxの有効化（必要な場合）
 - sudoパスワード設定（セキュリティ要件に応じて）
 
 #### rebuild
@@ -101,7 +100,3 @@ mv <wallpaper.jpg> ~/myconfig/wallpapers/wallpaper.jpg
 ```
 
 ## Tips
-
-### Dropbox
-
-use maestral

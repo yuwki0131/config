@@ -126,8 +126,6 @@
     unzip
     imagemagick
     libwebp
-    maestral
-
     ## for trackpad
     libinput
     libinput-gestures

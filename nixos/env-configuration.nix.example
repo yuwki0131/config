@@ -13,24 +13,10 @@
   networking.firewall = {
     # Open ports as needed for your services
     allowedTCPPorts = [
-      # 17500  # Dropbox LAN sync
       # 22     # SSH
       # 80     # HTTP
       # 443    # HTTPS
     ];
-    allowedUDPPorts = [
-      # 17500  # Dropbox LAN sync
-    ];
+    allowedUDPPorts = [ ];
   };
-
-  # Optional: Enable Dropbox service
-  # Uncomment the following lines if you use Dropbox
-  # systemd.user.services.dropbox = {
-  #   restartIfChanged = true;
-  #   enable = true;
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.dropbox}/bin/dropbox";
-  #     PassEnvironment = "DISPLAY";
-  #   };
-  # };
 }
