@@ -38,9 +38,12 @@
     gcolor3
     libheif
     ffmpeg
+    kdePackages.gwenview
+    kdePackages.ffmpegthumbs
 
     ## file tools
     meld
+    kdePackages.dolphin
 
     ## reader
     foliate
@@ -155,6 +158,8 @@
     #########################################
 
     ## langs
+    nodejs_22
+    pnpm
     rustc
     cargo
     rustup
@@ -220,7 +225,14 @@
     autoconf
     automake
     ncurses
-    # pkg-config
+    pkg-config
+
+    ## web game asset pipeline
+    vips
+    librsvg
+    libpng
+    libjpeg
+    libwebp
 
     ## ai
     claude-code
