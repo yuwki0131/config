@@ -106,6 +106,7 @@ in
 
   # Configure keymap in X11
   services.xserver = {
+    videoDrivers = [ "displaylink" "modesetting" "fbdev" ];
     xkb.layout = "jp";
     xkb.variant = "";
     xkb.options = "ctrl:nocaps";
@@ -119,7 +120,9 @@ in
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
-      # nerdfonts
+      # Nerd Fonts: 25.05 以降モノリス `nerdfonts` は廃止され `nerd-fonts.*` に分割された
+      nerd-fonts.jetbrains-mono # monospace 既定 (family: "JetBrainsMono Nerd Font")
+      nerd-fonts.symbols-only   # アイコングリフ (family: "Symbols Nerd Font Mono")
       hackgen-font
     ];
     fontDir.enable = true;
@@ -213,6 +216,8 @@ in
   # Allow prebuilt native npm binaries to run on NixOS.
   # This helps tools such as sharp, esbuild, and Playwright when used from pnpm.
   programs.nix-ld.enable = true;
+
+  systemd.services.dlm.wantedBy = [ "graphical.target" ];
 
 
   # Some programs need SUID wrappers, can be configured further or are
