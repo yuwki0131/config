@@ -104,6 +104,7 @@ export PATH
 ## fzf: キーバインド (C-r 履歴 / C-t ファイル / M-c cd) と補完
 if command -v fzf >/dev/null 2>&1; then
   eval "$(fzf --bash)"
+  export FZF_COMPLETION_TRIGGER=','   # `,` + Tab で fzf 補完（既定の ** を置換。bash標準補完は温存）
 fi
 
 ## autojump: `j <部分パス>` で頻度順ジャンプ
