@@ -147,6 +147,12 @@ in
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Thermal management for Intel CPU (Core Ultra / Meteor Lake) to avoid throttling.
+  services.thermald.enable = true;
+
+  # Compressed RAM-backed swap. Adds resilience under memory pressure (no disk swap present).
+  zramSwap.enable = true;
+
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
