@@ -93,7 +93,7 @@ export EDITOR='emacsclient -a emacs'
 export VISUAL="$EDITOR"
 
 ## PATH: 実在するユーザ/ツール bin のみを前置（重複追加も防止）
-for _dir in "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/.bun/bin" "$HOME/.asdf/shims"; do
+for _dir in "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/.bun/bin"; do
   if [ -d "$_dir" ] && [[ ":$PATH:" != *":$_dir:"* ]]; then
     PATH="$_dir:$PATH"
   fi
