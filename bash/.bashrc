@@ -84,5 +84,47 @@ alias codexd='codex --dangerously-bypass-approvals-and-sandbox'
 alias clauded='claude --dangerously-skip-permissions'
 alias copa='copilot --allow-all'
 
+#####################
+# Environment & shell integrations
+#####################
+
+## default editor (emacs server 経由、無ければ emacs にフォールバック)
+export EDITOR='emacsclient -a emacs'
+export VISUAL="$EDITOR"
+
+## PATH: 実在するユーザ/ツール bin のみを前置（重複追加も防止）
+for _dir in "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/.bun/bin" "$HOME/.asdf/shims"; do
+  if [ -d "$_dir" ] && [[ ":$PATH:" != *":$_dir:"* ]]; then
+    PATH="$_dir:$PATH"
+  fi
+done
+unset _dir
+export PATH
+
+## fzf: キーバインド (C-r 履歴 / C-t ファイル / M-c cd) と補完
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --bash)"
+fi
+
+## autojump: `j <部分パス>` で頻度順ジャンプ
+if [ -f /run/current-system/sw/share/autojump/autojump.bash ]; then
+  source /run/current-system/sw/share/autojump/autojump.bash
+fi
+
+## peco: fzf と競合しない補助関数として提供（C-r は fzf 側）
+if command -v peco >/dev/null 2>&1; then
+  # phist: 過去のコマンドを peco で選んで実行
+  phist() {
+    local cmd
+    cmd=$(history | sed 's/^[ ]*[0-9]\+[ ]*//' | tac | awk '!seen[$0]++' | peco) || return
+    [ -n "$cmd" ] && eval "$cmd"
+  }
+  # pcd: 配下のディレクトリを peco で選んで移動
+  pcd() {
+    local dir
+    dir=$(find "${1:-.}" -type d 2>/dev/null | peco) && cd "$dir" || return
+  }
+fi
+
 ## tasks
 alias altre='cd ~/workspace/altre/app && cargo run'
