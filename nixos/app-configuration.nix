@@ -13,9 +13,6 @@
     google-chrome
     chromium
     firefox
-    nyxt
-    luakit
-    # todo fixo
     tor-browser
 
     ## terminals
@@ -81,8 +78,6 @@
     ast-grep
     tree
     ranger
-    sl
-    silver-searcher
     xclip
     eza # as exa "exa has been removed"
     httpie
@@ -114,9 +109,6 @@
     kdePackages.breeze
     bibata-cursors
 
-    ## app platform
-    flatpak
-
     ## for screen capture
     slurp
     grim
@@ -136,16 +128,6 @@
 
     ## audio
     alsa-utils
-    pulseaudioFull
-
-    ## bluetooth
-    blueman
-
-    ## keylogger
-    logkeys
-
-    ## npu
-    openvino
 
     ## for nix
     nixpkgs-fmt
@@ -184,14 +166,8 @@
     # redis
 
     ## docker
-    docker
     docker-compose
     lazydocker
-    minikube
-    k3s
-    k9s
-    kubectl
-    kubernetes
 
     ## vm
     # virtualbox
@@ -200,7 +176,6 @@
     git
     gitFull
     gitkraken
-    github-desktop
     git-cola
     tig
     gh
@@ -230,7 +205,6 @@
     librsvg
     libpng
     libjpeg
-    libwebp
 
     ## ai
     claude-code
