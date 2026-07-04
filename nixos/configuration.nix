@@ -191,25 +191,6 @@ in
     docker.enable = true;
   };
 
-  # virtual box
-  virtualisation.virtualbox.host.enable = true;
-  services.udev.extraRules = ''
-    KERNEL=="vboxdrvu", GROUP="vboxusers", MODE="0660"
-  '';
-  systemd.slices."user".sliceConfig = {
-    MiscPolicy = "auto";
-
-    # VirtualBox の misc デバイスを許可
-    # /dev/vboxdrv     -> char 10:261
-    # /dev/vboxnetctl  -> char 10:263
-    MiscAllow = [
-      "char-10:261"
-      "char-10:263"
-    ];
-  };
-
-
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

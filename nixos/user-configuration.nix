@@ -7,7 +7,7 @@
   users.users.yuwki0131 = {
     isNormalUser = true;
     description = "yuwki0131";
-    extraGroups = [ "wheel" "networkmanager" "vboxusers" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     packages = with pkgs; [
     ];
     openssh.authorizedKeys.keys = [ "your-ssh-public-key" ];
