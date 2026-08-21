@@ -1,6 +1,7 @@
 # ln -s ~/myconfig/config/bash/.bashrc ~/.bashrc
 
-alias rc='sudo nixos-rebuild switch --flake ~/myconfig/config#nixos'
+# --impure: machine-local config is read from /etc/nixos (outside the flake)
+alias rc='sudo nixos-rebuild switch --flake ~/myconfig/config#nixos --impure'
 alias sl='ls'
 alias xcp='xclip -selection clipboard'
 alias la='exa -lha --git'
