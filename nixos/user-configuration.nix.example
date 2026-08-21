@@ -8,7 +8,7 @@
   users.users.<your-username> = {
     isNormalUser = true;
     description = "<Your Full Name>";
-    extraGroups = [ "wheel" "networkmanager" "vboxusers" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     packages = with pkgs; [
       # Add user-specific packages here
     ];
@@ -20,9 +20,4 @@
 
   # Set your hostname
   networking.hostName = "<your-hostname>";
-
-  # Enable automatic login for the user.
-  # autoLogin.user is inferred from users.users.<your-username> when only one normal user exists.
-  services.displayManager.autoLogin.enable = true;
-
 }

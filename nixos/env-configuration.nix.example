@@ -5,9 +5,7 @@
 
 {
   # Sudo configuration
-  # WARNING: This allows wheel group users to use sudo without password
-  # Consider removing this line for better security
-  security.sudo.wheelNeedsPassword = false;
+  security.sudo.wheelNeedsPassword = true;
 
   # Firewall configuration
   networking.firewall = {

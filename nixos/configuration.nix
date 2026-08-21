@@ -10,36 +10,47 @@ let
     (builtins.attrNames config.users.users);
 in
 {
+  # Machine-local configuration lives in /etc/nixos (not tracked in this repo).
+  # Reading it requires `nixos-rebuild --flake ... --impure`.
+  # CI has no /etc/nixos, so it falls back to the stub modules in ./testfiles.
   imports =
     [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      (if builtins.pathExists /etc/nixos/hardware-configuration.nix
+       then /etc/nixos/hardware-configuration.nix
+       else ./testfiles/hardware-configuration.nix)
+      (if builtins.pathExists /etc/nixos/user-configuration.nix
+       then /etc/nixos/user-configuration.nix
+       else ./testfiles/user-configuration.nix)
     ]
-    ++ lib.optional (builtins.pathExists ./user-configuration.nix) ./user-configuration.nix
+    ++ lib.optional (builtins.pathExists /etc/nixos/env-configuration.nix) /etc/nixos/env-configuration.nix
     ++ [
-      ./env-configuration.nix
       ./app-configuration.nix
     ];
 
   assertions = [
     {
-      assertion = normalUserNames != [ ];
+      assertion = builtins.pathExists /etc/nixos/hardware-configuration.nix || builtins.getEnv "CI" == "true";
       message = ''
-        No normal user is defined.
-        Create nixos/user-configuration.nix from nixos/user-configuration.nix.example
-        and define users.users.<your-username>.
+        /etc/nixos/hardware-configuration.nix not found (or evaluated without --impure).
+        Generate it with nixos-generate-config, then rebuild with:
+        sudo nixos-rebuild switch --flake ~/myconfig/config#nixos --impure
       '';
     }
     {
-      assertion =
-        (!config.services.displayManager.autoLogin.enable)
-        || (
-          config.services.displayManager.autoLogin.user != ""
-          && builtins.hasAttr config.services.displayManager.autoLogin.user config.users.users
-        );
+      assertion = builtins.pathExists /etc/nixos/user-configuration.nix || builtins.getEnv "CI" == "true";
       message = ''
-        services.displayManager.autoLogin.user must match a defined users.users entry.
-        If you only have one normal user, you can omit autoLogin.user and it will be inferred.
+        /etc/nixos/user-configuration.nix not found (or evaluated without --impure).
+        Copy nixos/user-configuration.nix.example to /etc/nixos/user-configuration.nix,
+        edit it, then rebuild with:
+        sudo nixos-rebuild switch --flake ~/myconfig/config#nixos --impure
+      '';
+    }
+    {
+      assertion = normalUserNames != [ ];
+      message = ''
+        No normal user is defined.
+        Create /etc/nixos/user-configuration.nix from nixos/user-configuration.nix.example
+        and define users.users.<your-username>.
       '';
     }
   ];
@@ -174,11 +185,6 @@ in
 
   # can select "plasma5" or "cinnamon"
   services.displayManager.defaultSession = "hyprland";
-  services.displayManager.autoLogin.user = lib.mkDefault (
-    if builtins.length normalUserNames == 1
-    then builtins.head normalUserNames
-    else ""
-  );
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

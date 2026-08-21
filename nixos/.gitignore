@@ -1,1 +1,5 @@
-user-configuration.nix
+# Machine-local configuration lives in /etc/nixos, never in this repo
+# (anchored so nixos/testfiles/ stubs stay tracked)
+/user-configuration.nix
+/env-configuration.nix
+/hardware-configuration.nix
